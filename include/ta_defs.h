@@ -57,10 +57,6 @@
     /* Identify if 64 bits platform with __64BIT__.
      * Can also be done from compiler command line.
      */
-    #if defined(_WIN64)
-       #define __64BIT__ 1
-    #endif
-
     #if defined( __LP64__ ) || defined( _LP64 )
        #define __64BIT__ 1
     #endif
@@ -78,21 +74,15 @@
         typedef signed int   Int32;
         typedef unsigned int UInt32;
 
-        #if defined(_WIN32) || defined(_WIN64)
-           /* See "Windows Data Types". Platform SDK. MSDN documentation. */
-           typedef signed __int64   Int64;
-           typedef unsigned __int64 UInt64;
+        #if defined(__64BIT__)
+           /* Standard LP64 model for 64 bits Unix platform. */
+           typedef signed long   Int64;
+           typedef unsigned long UInt64;
         #else
-           #if defined(__64BIT__)
-              /* Standard LP64 model for 64 bits Unix platform. */
-              typedef signed long   Int64;
-              typedef unsigned long UInt64;
-           #else
-              /* Standard ILP32 model for 32 bits Unix platform. */
-              typedef signed long long   Int64;
-              typedef unsigned long long UInt64;
-           #endif
-         #endif
+           /* Standard ILP32 model for 32 bits Unix platform. */
+           typedef signed long long   Int64;
+           typedef unsigned long long UInt64;
+        #endif
     #endif
   #endif
 #endif
@@ -208,13 +198,7 @@
   #define NAMESPACE(x)
   #define UNUSED_VARIABLE(x) (void)x
 
-  #ifdef _WIN32
-    #ifdef TA_LIB_SHARED
-        #define TA_LIB_API __declspec(dllexport)
-    #else
-        #define TA_LIB_API
-    #endif
-  #elif defined(__GNUC__) && __GNUC__ >= 4
+  #if defined(__GNUC__) && __GNUC__ >= 4
     #define TA_LIB_API __attribute__ ((visibility("default")))
   #else
     #define TA_LIB_API

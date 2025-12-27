@@ -104,7 +104,6 @@
 // Comment-out these to reduce processing time (useful for devs)
 #define ENABLE_JAVA
 #define ENABLE_C
-#define ENABLE_DOTNET
 #define ENABLE_RUST
 
 // Comment to genereate all functions.
@@ -281,12 +280,6 @@ FileHandle *gOutCore_Java = NULL;       /* For Core.Java */
 FileHandle *gOutJavaDefs_H = NULL;      /* For "java_defs.h" */
 FileHandle *gOutFunc_Annotation = NULL; /* For "CoreAnnotated.java" */
 
-#ifdef _MSC_VER
-/* The following files are generated only on Windows platform. */
-FileHandle *gOutDotNet_H = NULL;      /* For .NET interface file */
-FileHandle *gOutProjFile = NULL;        /* For .NET project file */
-FileHandle *gOutMSVCProjFile = NULL;    /* For MSVC project file */
-#endif
 
 static void create_dirs( void );
 static void create_dir_recursively( const char *dir );
@@ -403,8 +396,6 @@ static int createTemplate( FileHandle *in, FileHandle *out );
 static int generateFuncAPI_C( void );
 
 #ifdef _MSC_VER
-static int createProjTemplate( FileHandle *in, FileHandle *out );
-static int createMSVCProjTemplate( FileHandle *in, FileHandle *out );
 #endif
 
 static void writeFuncFile( const TA_FuncInfo *funcInfo );
@@ -531,10 +522,7 @@ int main(int argc, char* argv[])
          printf( "     - ta-lib/src/ta_abstract/ta_group_idx.c\n");
          printf( "     - ta-lib/src/ta_abstract/frames/*.*\n");
          printf( "     - ta-lib/swig/src/interface/ta_func.swg\n" );
-         printf( "     - ta-lib/dotnet/src/Core/TA-Lib-Core.vcproj (Win32 only)\n" );
-         printf( "     - ta-lib/dotnet/src/Core/TA-Lib-Core.h (Win32 only)\n" );
-         printf( "     - ta-lib/src/ta_abstract/java_defs.h (Win32 only)\n" );
-         printf( "     - ta-lib/ide/msvc/lib_proj/ta_func/ta_func.dsp (Win32 only)\n" );
+         printf( "     - ta-lib/src/ta_abstract/ta_java_defs.h\n" );
          printf( "     - ta-lib/java/src/com/tictactec/ta/lib/Core.java\n" );
          printf( "     - ta-lib/java/src/com/tictactec/ta/lib/CoreAnnotated.java\n" );
          printf( "     - ta-lib/ta_func_api.xml\n" );
@@ -845,53 +833,6 @@ static int genCode(int argc, char* argv[])
    (void)argv;
    int ret;
 
-   #ifdef _MSC_VER
-      /* Create .NET project files template */
-      #define FILE_NET_PROJ ta_fs_path(5, "..", "dotnet", "src", "Core", "TA-Lib-Core.vcproj")
-      #define FILE_NET_PROJ_TMP ta_fs_path(3, "..", "temp", "dotnetproj.tmp")
-      gOutProjFile = fileOpen( FILE_NET_PROJ, NULL, FILE_READ );
-      if( gOutProjFile == NULL )
-      {
-         printf( "\nCannot access [%s]\n", gToOpen );
-         return -1;
-      }
-      tempFile = fileOpen( FILE_NET_PROJ_TMP, NULL, FILE_WRITE|WRITE_ALWAYS );
-      if( tempFile == NULL )
-      {
-         printf( "Cannot create temporary .NET project file!\n" );
-         return -1;
-      }
-      if( createProjTemplate( gOutProjFile, tempFile ) != 0 )
-      {
-         printf( "Failed to parse and write the temporary .NET project file!\n" );
-         return -1;
-      }
-      fileClose(gOutProjFile);
-      fileClose(tempFile);
-
-      /* Create MSVC project files template */
-      #define FILE_MSVC_PROJ     ta_fs_path(6, "..", "ide", "msvc", "lib_proj", "ta_func", "ta_func.dsp")
-      #define FILE_MSVC_PROJ_TMP ta_fs_path(3, "..", "temp", "ta_func_dsp.tmp")
-      gOutMSVCProjFile = fileOpen( FILE_MSVC_PROJ, NULL, FILE_READ );
-      if( gOutMSVCProjFile == NULL )
-      {
-         printf( "\nCannot access [%s]\n", gToOpen );
-         return -1;
-      }
-      tempFile = fileOpen( FILE_MSVC_PROJ_TMP, NULL, FILE_WRITE|WRITE_ALWAYS );
-      if( tempFile == NULL )
-      {
-         printf( "Cannot create temporary MSVC project file!\n" );
-         return -1;
-      }
-      if( createMSVCProjTemplate( gOutMSVCProjFile, tempFile ) != 0 )
-      {
-         printf( "Failed to parse and write the temporary MSVC project file!\n" );
-         return -1;
-      }
-      fileClose(gOutMSVCProjFile);
-      fileClose(tempFile);
-   #endif
 
 
    // Verify if javac executeable is installed, if not, just skip the java code generation.
@@ -934,32 +875,6 @@ static int genCode(int argc, char* argv[])
       }
    #endif
 
-   #if defined(ENABLE_DOTNET)
-      /* Create the .NET interface file template */
-      #ifdef _MSC_VER
-      #define FILE_NET_HEADER     ta_fs_path(5, "..", "dotnet", "src", "Core", "TA-Lib-Core.h")
-      #define FILE_NET_HEADER_TMP ta_fs_path(3, "..", "temp", "dotneth.tmp")
-      gOutDotNet_H = fileOpen( FILE_NET_HEADER, NULL, FILE_READ );
-      if( gOutDotNet_H == NULL )
-      {
-         printf( "\nCannot access [%s]\n", gToOpen );
-         return -1;
-      }
-      tempFile = fileOpen( FILE_NET_HEADER_TMP, NULL, FILE_WRITE|WRITE_ALWAYS );
-      if( tempFile == NULL )
-      {
-         printf( "Cannot create temporary .NET header file!\n" );
-         return -1;
-      }
-      if( createTemplate( gOutDotNet_H, tempFile ) != 0 )
-      {
-         printf( "Failed to parse and write the temporary .NET header file!\n" );
-         return -1;
-      }
-      fileClose(gOutDotNet_H);
-      fileClose(tempFile);
-      #endif
-   #endif
 
    #if defined(ENABLE_C)
       /* Create ta_retcode.c */
@@ -1066,25 +981,6 @@ static int genCode(int argc, char* argv[])
    #endif
 
 
-   #if defined(ENABLE_C)
-      #ifdef _MSC_VER
-         /* Re-open the .NET project template. */
-         gOutProjFile = fileOpen( FILE_NET_PROJ, FILE_NET_PROJ_TMP, FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-         if( gOutProjFile == NULL )
-         {
-            printf( "Cannot update [%s]\n", FILE_NET_PROJ );
-            return -1;
-         }
-
-         /* Re-open the MSVC project template. */
-         gOutMSVCProjFile = fileOpen( FILE_MSVC_PROJ, FILE_MSVC_PROJ_TMP, FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-         if( gOutMSVCProjFile == NULL )
-         {
-            printf( "Cannot update [%s]\n", FILE_MSVC_PROJ );
-            return -1;
-         }
-      #endif
-   #endif
 
    #if defined(ENABLE_JAVA)
       if (gOutCore_Java == NULL) {
@@ -1110,17 +1006,6 @@ static int genCode(int argc, char* argv[])
       }
    #endif
 
-   #if defined(ENABLE_DOTNET)
-      /* Re-open the .NET interface template. */
-      #ifdef _MSC_VER
-      gOutDotNet_H = fileOpen( FILE_NET_HEADER, FILE_NET_HEADER_TMP, FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-      if( gOutDotNet_H == NULL )
-      {
-         printf( "Cannot update [%s]\n", FILE_NET_HEADER );
-         return -1;
-      }
-      #endif
-   #endif
 
    /* Process each functions. Two phase. */
    TA_ForEachFunc( doForEachFunctionPhase1, NULL );
@@ -1158,11 +1043,6 @@ static int genCode(int argc, char* argv[])
    fileClose( gOutFunc_Annotation );
    fileDelete( FILE_CORE_JAVA_TMP );
 
-   #ifdef _MSC_VER
-      fileClose( gOutDotNet_H );
-      fileClose( gOutProjFile );
-      fileClose( gOutMSVCProjFile );
-   #endif
 
    if( retCode != TA_SUCCESS )
    {
@@ -1274,11 +1154,6 @@ static int genCode(int argc, char* argv[])
    #endif
 
    /* Remove temporary files. */
-   #ifdef _MSC_VER
-      fileDelete( FILE_NET_PROJ_TMP );
-      fileDelete( FILE_MSVC_PROJ_TMP );
-      fileDelete( FILE_NET_HEADER_TMP );
-   #endif
 
    printf( "\n** Update completed with success **\n");
 
@@ -1771,84 +1646,6 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
          fprintf( gOutMakefile_AM->file, " \\\n\tta_%s.c", funcInfo->name );
    #endif
 
-   #if defined(ENABLE_DOTNET) && defined(_MSC_VER)
-      /* Add the entry in the .NET project file. */
-      fprintf( gOutProjFile->file, "				<File\n" );
-      fprintf( gOutProjFile->file, "					RelativePath=\".." PATH_SEPARATOR ".." PATH_SEPARATOR ".." PATH_SEPARATOR "c" PATH_SEPARATOR "src" PATH_SEPARATOR "ta_func" PATH_SEPARATOR "ta_%s.c\">\n", funcInfo->name );
-      fprintf( gOutProjFile->file, "					<FileConfiguration\n" );
-      fprintf( gOutProjFile->file, "						Name=\"Debug|Win32\">\n" );
-      fprintf( gOutProjFile->file, "						<Tool\n" );
-      fprintf( gOutProjFile->file, "							Name=\"VCCLCompilerTool\"\n" );
-      fprintf( gOutProjFile->file, "							AdditionalIncludeDirectories=\"\"\n" );
-      fprintf( gOutProjFile->file, "							UsePrecompiledHeader=\"0\"\n" );
-      fprintf( gOutProjFile->file, "							CompileAs=\"2\"/>\n" );
-      fprintf( gOutProjFile->file, "					</FileConfiguration>\n" );
-      fprintf( gOutProjFile->file, "					<FileConfiguration\n" );
-      fprintf( gOutProjFile->file, "						Name=\"Release|Win32\">\n" );
-      fprintf( gOutProjFile->file, "						<Tool\n" );
-      fprintf( gOutProjFile->file, "							Name=\"VCCLCompilerTool\"\n" );
-      fprintf( gOutProjFile->file, "							AdditionalIncludeDirectories=\"\"\n" );
-      fprintf( gOutProjFile->file, "							UsePrecompiledHeader=\"0\"\n" );
-      fprintf( gOutProjFile->file, "							CompileAs=\"2\"/>\n" );
-      fprintf( gOutProjFile->file, "					</FileConfiguration>\n" );
-      fprintf( gOutProjFile->file, "					<FileConfiguration\n" );
-      fprintf( gOutProjFile->file, "						Name=\"Debug SubArray|Win32\">\n" );
-      fprintf( gOutProjFile->file, "						<Tool\n" );
-      fprintf( gOutProjFile->file, "							Name=\"VCCLCompilerTool\"\n" );
-      fprintf( gOutProjFile->file, "							AdditionalIncludeDirectories=\"\"\n" );
-      fprintf( gOutProjFile->file, "							UsePrecompiledHeader=\"0\"\n" );
-      fprintf( gOutProjFile->file, "							CompileAs=\"2\"/>\n" );
-      fprintf( gOutProjFile->file, "					</FileConfiguration>\n" );
-      fprintf( gOutProjFile->file, "					<FileConfiguration\n" );
-      fprintf( gOutProjFile->file, "						Name=\"Release SubArray|Win32\">\n" );
-      fprintf( gOutProjFile->file, "						<Tool\n" );
-      fprintf( gOutProjFile->file, "							Name=\"VCCLCompilerTool\"\n" );
-      fprintf( gOutProjFile->file, "							AdditionalIncludeDirectories=\"\"\n" );
-      fprintf( gOutProjFile->file, "							UsePrecompiledHeader=\"0\"\n" );
-      fprintf( gOutProjFile->file, "							CompileAs=\"2\"/>\n" );
-      fprintf( gOutProjFile->file, "					</FileConfiguration>\n" );
-      fprintf( gOutProjFile->file, "				</File>\n" );
-
-      /* Add the entry in the MSVC project file. */
-      fprintf( gOutMSVCProjFile->file, "# Begin Source File\n" );
-      fprintf( gOutMSVCProjFile->file, "\n" );
-      fprintf( gOutMSVCProjFile->file, "SOURCE=.." PATH_SEPARATOR ".." PATH_SEPARATOR ".." PATH_SEPARATOR ".." PATH_SEPARATOR "src" PATH_SEPARATOR "ta_func" PATH_SEPARATOR "ta_%s.c\n", funcInfo->name );
-      fprintf( gOutMSVCProjFile->file, "# End Source File\n" );
-
-      /* Generate the functions declaration for the .NET interface. */
-      printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0 );
-
-	   fprintf( gOutDotNet_H->file, "         #if defined( _MANAGED ) && defined( USE_SUBARRAY )\n" );
-
-	   // SubArray<double> declaration
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0 );
-	   fprintf( gOutDotNet_H->file, "\n" );
-
-	   // SubArray<float> declaration
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0 );
-	   fprintf( gOutDotNet_H->file, "\n" );
-
-	   // cli_array<double> to SubArray<double> conversion
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 );
-	   fprintf( gOutDotNet_H->file, "         { return " );
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0 );
-	   fprintf( gOutDotNet_H->file, "         }\n" );
-
-	   // cli_array<float> to SubArray<float> conversion
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0 );
-	   fprintf( gOutDotNet_H->file, "         { return " );
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0 );
-	   fprintf( gOutDotNet_H->file, "         }\n" );
-
-	   fprintf( gOutDotNet_H->file, "         #elif defined( _MANAGED )\n" );
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0 );
-	   printFunc( gOutDotNet_H->file, NULL, funcInfo, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0 );
-	   fprintf( gOutDotNet_H->file, "         #endif\n" );
-
-	   fprintf( gOutDotNet_H->file, "\n" );
-	   fprintf( gOutDotNet_H->file, "         #define TA_%s Core::%s\n", funcInfo->name, funcInfo->camelCaseName );
-	   fprintf( gOutDotNet_H->file, "         #define TA_%s_Lookback Core::%sLookback\n\n", funcInfo->name, funcInfo->camelCaseName );
-   #endif
 
    #if defined(ENABLE_JAVA)
       /* Generate CoreAnnotated */
@@ -3207,112 +3004,6 @@ static void doDefsFile( void )
    #undef FILE_TA_DEFS_TMP
 }
 
-#ifdef _MSC_VER
-static int createProjTemplate( FileHandle *in, FileHandle *out )
-{
-   FILE *inFile;
-   FILE *outFile;
-   unsigned int skipSection;
-   unsigned int sectionDone;
-   unsigned int step;
-
-   inFile = in->file;
-   outFile = out->file;
-
-   skipSection = 0;
-   sectionDone = 0;
-   step        = 0;
-
-   while( fgets( gTempBuf, BUFFER_SIZE, inFile ) )
-   {
-      if( !skipSection )
-      {
-         fputs( gTempBuf, outFile );
-         if( !strstr( gTempBuf, "<Filter" ) )
-            continue;
-
-         if( !fgets( gTempBuf2, BUFFER_SIZE, inFile ) )
-         {
-            printf( "Unexpected end-of-file\n" );
-            return -1;
-         }
-         fputs( gTempBuf2, outFile );
-
-         if( !strstr( gTempBuf2, "Name=\"ta_func\"" ) )
-            continue;
-
-         if( !fgets( gTempBuf3, BUFFER_SIZE, inFile ) )
-         {
-            printf( "Unexpected end-of-file\n" );
-            return -1;
-         }
-
-         fputs( gTempBuf3, outFile );
-
-         if( !strstr( gTempBuf3, ">" ) )
-            continue;
-
-         skipSection = 1;
-         fputs( "%%%GENCODE%%%\n", outFile );
-      }
-      else if( strstr( gTempBuf, "</Filter>" ) )
-      {
-         skipSection = 0;
-         fputs( gTempBuf, outFile );
-         sectionDone++;
-      }
-   }
-
-   return 0;
-}
-
-static int createMSVCProjTemplate( FileHandle *in, FileHandle *out )
-{
-   FILE *inFile;
-   FILE *outFile;
-   unsigned int skipSection;
-
-   inFile = in->file;
-   outFile = out->file;
-
-   skipSection = 0;
-
-   while( !skipSection && fgets( gTempBuf, BUFFER_SIZE, inFile ) )
-   {
-      if( strstr( gTempBuf, "# Begin Source File") )
-         skipSection = 1;
-      else
-         fputs( gTempBuf, outFile );
-   }
-
-   if( !skipSection )
-   {
-      printf( "Unexpected end-of-file\n" );
-      return -1;
-   }
-
-   fputs( "%%%GENCODE%%%\n", outFile );
-
-   while( fgets( gTempBuf, BUFFER_SIZE, inFile ) )
-   {
-      if( strstr( gTempBuf, "# End Group" ) )
-      {
-         /* Add the "non TA function" source files. */
-         fprintf( outFile, "# Begin Source File\n");
-         fprintf( outFile, "\n");
-         fprintf( outFile, "SOURCE=.." PATH_SEPARATOR ".." PATH_SEPARATOR ".." PATH_SEPARATOR ".." PATH_SEPARATOR "src" PATH_SEPARATOR "ta_func" PATH_SEPARATOR "ta_utility.c\n");
-         fprintf( outFile, "# End Source File\n");
-         fprintf( outFile, "# End Group\n");
-         break;
-      }
-   }
-
-   while( fgets( gTempBuf, BUFFER_SIZE, inFile ) )
-      fputs( gTempBuf, outFile );
-
-   return 0;
-}
-#endif
 
 static int createTemplate( FileHandle *in, FileHandle *out )
 {

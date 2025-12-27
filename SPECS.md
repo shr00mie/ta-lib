@@ -48,7 +48,7 @@ Documentation of the SWIG-based Python bindings:
 Build system and compilation documentation:
 
 - **Build Systems**: CMake (primary) and Autotools (legacy)
-- **Platform Support**: Linux, Windows, macOS configurations
+- **Platform Support**: Linux configurations
 - **Compilation Process**: Source organization and build steps
 - **Library Targets**: Shared and static library generation
 - **Packaging**: CPack integration for distribution packages
@@ -68,7 +68,7 @@ System and build dependency documentation:
 - **Runtime Dependencies**: Standard C library and math library
 - **Build Dependencies**: Compilers, CMake, Autotools
 - **Optional Dependencies**: SWIG, Python headers, JDK
-- **Platform-Specific**: Requirements for Linux, Windows, macOS
+- **Platform-Specific**: Requirements for Linux
 - **Version Requirements**: Minimum and recommended versions
 - **Dependency Checking**: How the build system verifies dependencies
 

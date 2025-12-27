@@ -55,7 +55,6 @@ Typical locations for the libraries are:
 
 For [homebrew](https://formulae.brew.sh/formula/ta-lib), use <b>brew --prefix ta-lib</b> to find the paths.
 
-For windows, look into <b>C:\Program Files\TA-Lib</b> for 64-bits and <b>C:\Program Files (x86)\TA-Lib</b> for 32-bits.
 
 
 <h2><a name="ta_func">3.0 Technical Analysis Functions</a></h2>
@@ -241,4 +240,4 @@ possible to control the unstable period (the amount of data to strip off) with
 
 <p>One exception to the rule is TA_Shutdown() which must be called single threaded (typically from the only thread remaining prior to exit your application).</p>
 
-<p>Note: TA-Lib assumes it is link to a thread safe malloc/free runtime library, which is the default on all modern platforms (Linux,Windows,Mac). In other word, safe with any compiler supporting C11 or more recent.</p>
+<p>Note: TA-Lib assumes it is link to a thread safe malloc/free runtime library, which is the default on all modern platforms (Linux). In other word, safe with any compiler supporting C11 or more recent.</p>

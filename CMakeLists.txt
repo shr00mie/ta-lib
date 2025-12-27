@@ -1,7 +1,4 @@
 cmake_minimum_required(VERSION 3.18)
-if (CMAKE_VERSION VERSION_LESS "3.30" AND WIN32)
-    message(FATAL_ERROR "For Windows systems you need CMake Version 3.30")
-endif (CMAKE_VERSION VERSION_LESS "3.30" AND WIN32)
 
 project(ta-lib)
 
@@ -22,20 +19,6 @@ if(NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
 endif()
 
-if(WIN32)
-    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-        set(CMAKE_INSTALL_PREFIX "C:/Program Files/TA-Lib" CACHE PATH "Installation Directory" FORCE)
-    else()
-        set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TA-Lib" CACHE PATH "Installation Directory" FORCE)
-    endif()
-
-	if(DEFINED ENV{Platform})
-    	set(PLATFORM_ENV $ENV{Platform})
-    	message(STATUS "Platform environment variable: ${PLATFORM_ENV}")
-	else()
-    	message(FATAL_ERROR "Platform env variable not set. Did you forget to do vcvarsall.bat?")
-	endif()
-endif()
 message(STATUS "Installation Directory: ${CMAKE_INSTALL_PREFIX}")
 
 # Attempt to set SOURCE_DATE_EPOCH to the last commit timestamp of include/ta_common.h
@@ -326,41 +309,17 @@ if(UNIX)
 	set_target_properties(ta-lib-static PROPERTIES OUTPUT_NAME ta-lib)
 endif(UNIX)
 
-if(WIN32)
-	# Note: WIN32 is defined regardless of 32 or 64 bits host.
-	set_target_properties(ta-lib-static PROPERTIES OUTPUT_NAME ta-lib-static)
-endif(WIN32)
-
-if(MSVC)
-	add_compile_options($<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:/deterministic>)
-	add_compile_options($<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,STATIC_LIBRARY>:/deterministic>)
-    add_link_options($<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:/Brepro>)
-    add_link_options($<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,STATIC_LIBRARY>:/Brepro>)
-endif(MSVC)
-
 target_include_directories(ta-lib PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_include_directories(ta-lib-static PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 # Install the libraries and headers.
-if(WIN32)
-    install(TARGETS ta-lib ta-lib-static
-	    RUNTIME DESTINATION bin  # For shared libraries (DLLs on Windows)
-        LIBRARY DESTINATION lib  # For import library
-        ARCHIVE DESTINATION lib  # For static libraries
-    )
-
-    install(FILES ${LIB_HEADERS}
-        DESTINATION include
-    )
-else()
-    install(TARGETS ta-lib ta-lib-static
-        LIBRARY DESTINATION lib  # For shared libraries (.so on Linux)
-        ARCHIVE DESTINATION lib  # For static libraries
-    )
-    install(FILES ${LIB_HEADERS}
-        DESTINATION include/ta-lib
-    )
-endif()
+install(TARGETS ta-lib ta-lib-static
+    LIBRARY DESTINATION lib  # For shared libraries (.so on Linux)
+    ARCHIVE DESTINATION lib  # For static libraries
+)
+install(FILES ${LIB_HEADERS}
+    DESTINATION include/ta-lib
+)
 
 # Cleanup to avoid potential conflict with older installation:
 #  - Remove deprecated "ta_lib" libs. New name is "ta-lib"
@@ -474,12 +433,7 @@ if(BUILD_DEV_TOOLS)
 	)
 
 	# Link the necessary libraries for ta_regtest (the 'm' is for the Math library)
-	# On windows, no need for a math library. It is already included in the standard library.
-	if(WIN32)
-		target_link_libraries(ta_regtest PRIVATE ta-lib-static)
-	else()
-		target_link_libraries(ta_regtest PRIVATE ta-lib-static m)
-	endif()
+	target_link_libraries(ta_regtest PRIVATE ta-lib-static m)
 
 	# Set the output directory for the ta_regtest executable during the build process
 	set_target_properties(ta_regtest PROPERTIES
@@ -522,76 +476,35 @@ set(CPACK_PACKAGE_CONTACT "mfortier@yahoo.com")
 
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "TA-Lib Technical Analysis Library")
 
-if(WIN32)
-    # Use mix case for Windows "best practice" in "C:\Program Files"
-    set(CPACK_PACKAGE_INSTALL_DIRECTORY "TA-Lib")
-	# Set a constant UPGRADE_GUID for each variant (never change these)
-	if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-	  set(CPACK_WIX_UPGRADE_GUID "37b08339-521a-422f-a964-e616bd3e06b9")
-	  set(CPACK_PACKAGE_NAME "TA-Lib (64 bits)")
-	else()
-	  set(CPACK_WIX_UPGRADE_GUID "773316fa-8a9d-433c-b639-8f71a71641c5")
-	  set(CPACK_PACKAGE_NAME "TA-Lib (32 bits)")
-	endif()
-else()
-    # Keep everything lowercase for Unix-like systems
-    set(CPACK_PACKAGE_INSTALL_DIRECTORY "ta-lib")
-	set(CPACK_PACKAGE_NAME "ta-lib")
-endif()
+# Keep everything lowercase for Unix-like systems
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "ta-lib")
+set(CPACK_PACKAGE_NAME "ta-lib")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
 set(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 
 # Detect host architecture and set DEB and RPM specific architecture variables
 message(STATUS "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
 if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64|AMD64")
-	if(WIN32)
-	  # Handle cross-compilation configured with, say, using "vcvarsall.bat amd64_arm" settings.
-	  # For windows, assume CMAKE_SYSTEM_PROCESSOR is always "AMD64", and  the target architecture
-	  # is in PLATFORM_ENV.
-	  #
-	  # There is no plan to cross-compile from anything else than AMD64.
-	  if(PLATFORM_ENV STREQUAL "x86")
-	    set(MSI_HOST_ARCH "x86_32")
-	    message(STATUS "Cross-compilation to ${MSI_HOST_ARCH}")
-      elseif(PLATFORM_ENV STREQUAL "arm")
-	    set(MSI_HOST_ARCH "arm_32")
-	    message(STATUS "Cross-compilation to ${MSI_HOST_ARCH}")
-	  elseif(PLATFORM_ENV STREQUAL "arm64")
-	    set(MSI_HOST_ARCH "arm_64")
-	    message(STATUS "Cross-compilation to ${MSI_HOST_ARCH}")
-	  elseif(PLATFORM_ENV STREQUAL "x64")
-	    set(MSI_HOST_ARCH "x86_64")
-	  else()
-	    status(FATAL_ERROR "Unsupported vcvarsall target: ${PLATFORM_ENV}")
-      endif()
-    else()
-	  set(DEB_HOST_ARCH "amd64")
-	  set(RPM_HOST_ARCH "x86_64")
-	endif()
+    set(DEB_HOST_ARCH "amd64")
+    set(RPM_HOST_ARCH "x86_64")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86|i386|i686")
     set(DEB_HOST_ARCH "i386")
     set(RPM_HOST_ARCH "i386")
-    set(MSI_HOST_ARCH "x86_32")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "armv7l")
     set(DEB_HOST_ARCH "armhf")
     set(RPM_HOST_ARCH "armv7hl")
-    set(MSI_HOST_ARCH "arm_32")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
     set(DEB_HOST_ARCH "arm64")
     set(RPM_HOST_ARCH "aarch64")
-    set(MSI_HOST_ARCH "arm_64")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64le")
     set(DEB_HOST_ARCH "ppc64el")
     set(RPM_HOST_ARCH "ppc64le")
-    set(MSI_HOST_ARCH "ppc64le")
 elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "s390x")
     set(DEB_HOST_ARCH "s390x")
     set(RPM_HOST_ARCH "s390x")
-    set(MSI_HOST_ARCH "s390x")
 else()
     set(DEB_HOST_ARCH "${CMAKE_SYSTEM_PROCESSOR}")
     set(RPM_HOST_ARCH "${CMAKE_SYSTEM_PROCESSOR}")
-    set(MSI_HOST_ARCH "${CMAKE_SYSTEM_PROCESSOR}")
 endif()
 
 # Debian package created by TA-LIb CI only if host is ubuntu.
@@ -610,36 +523,11 @@ set(CPACK_RPM_PACKAGE_GROUP "Development/Libraries")
 set(CPACK_RPM_PACKAGE_LICENSE "BSD")
 set(CPACK_RPM_PACKAGE_REQUIRES "glibc")
 
-# MSI package created only if host is windows.
-
-# CPACK_WIX_VERSION "4" is for ""4 and later" and is the one to use for Wix 5
-# References:
-#    https://cmake.org/cmake/help/latest/cpack_gen/wix.html#variable:CPACK_WIX_VERSION
-#    https://stackoverflow.com/questions/77584815/how-to-use-wix-v4-within-cmake-to-build-an-installation-package-for-windows
-set(CPACK_WIX_VERSION "4")
-set(CPACK_WIX_LICENSE_RTF "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.rtf")
-#set(CPACK_WIX_UI_BANNER "${CMAKE_CURRENT_SOURCE_DIR}/banner.bmp")
-#set(CPACK_WIX_UI_DIALOG "${CMAKE_CURRENT_SOURCE_DIR}/dialog.bmp")
-
-# Set the PRODUCT_GUID to change on every version change.
-#
-# This should guarantee a single version of the library installed
-# (older ones always uninstalled first).
-string(MD5 PRODUCT_GUID_HASH "${CPACK_WIX_UPGRADE_GUID}${CPACK_PACKAGE_VERSION}")
-string(SUBSTRING ${PRODUCT_GUID_HASH} 0 8 PRODUCT_GUID_PART1)
-string(SUBSTRING ${PRODUCT_GUID_HASH} 8 4 PRODUCT_GUID_PART2)
-string(SUBSTRING ${PRODUCT_GUID_HASH} 12 4 PRODUCT_GUID_PART3)
-string(SUBSTRING ${PRODUCT_GUID_HASH} 16 4 PRODUCT_GUID_PART4)
-string(SUBSTRING ${PRODUCT_GUID_HASH} 20 12 PRODUCT_GUID_PART5)
-set(CPACK_WIX_PRODUCT_GUID "${PRODUCT_GUID_PART1}-${PRODUCT_GUID_PART2}-${PRODUCT_GUID_PART3}-${PRODUCT_GUID_PART4}-${PRODUCT_GUID_PART5}")
-
 # Set common variables that changes depending of the generator.
 if(CPACK_GENERATOR STREQUAL "DEB")
     set(CPACK_PACKAGE_FILE_NAME "ta-lib_${CPACK_PACKAGE_VERSION}_${DEB_HOST_ARCH}")
 elseif(CPACK_GENERATOR STREQUAL "RPM")
     set(CPACK_PACKAGE_FILE_NAME "ta-lib-${CPACK_PACKAGE_VERSION}.${RPM_HOST_ARCH}")
-elseif(CPACK_GENERATOR STREQUAL "WIX")
-	set(CPACK_PACKAGE_FILE_NAME "ta-lib-${CPACK_PACKAGE_VERSION}-windows-${MSI_HOST_ARCH}")
 else()
 	set(CPACK_PACKAGE_FILE_NAME "ta-lib-${CPACK_PACKAGE_VERSION}")
 endif()

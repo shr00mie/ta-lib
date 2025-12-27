@@ -12,7 +12,7 @@ import filecmp
 import zlib
 import tarfile
 
-from .common import is_linux, is_windows, run_command, run_command_sudo
+from .common import is_linux, run_command, run_command_sudo
 
 # Use path_join to create a new path with proper seperators for the host system.
 # (this is to solve a problem on windows with '\' versus '/')
@@ -53,12 +53,7 @@ def remove_lib_files_recursive(target_path: str):
     # all are reflected in the digest)
     #
     # Always remove the ta_config.h... it is a build artifact.
-    if is_windows():
-        for root, dirs, files in os.walk(target_path):
-            for file in files:
-                if "ta_config.h" in file or file.endswith('.msi') or file.endswith('.lib') or file.endswith('.dll'):
-                    os.remove(path_join(root, file))
-    elif is_linux():
+    if is_linux():
         pattern = r'\.so\.\d+'
         for root, dirs, files in os.walk(target_path):
             for file in files:
@@ -228,13 +223,7 @@ def force_delete(path: str, sudo_pwd: str = ""):
     #
     # Exit on any error.
     try:
-        if is_windows():
-            if os.path.isdir(path):
-                subprocess.run(['cmd', '/c', 'rmdir', '/s', '/q', path], check=True, stderr=subprocess.DEVNULL)
-            else:
-                subprocess.run(['cmd', '/c', 'del', '/f', '/q', path], check=True, stderr=subprocess.DEVNULL)
-        else:
-            subprocess.run(['rm', '-rf', path], check=True, stderr=subprocess.DEVNULL)
+        subprocess.run(['rm', '-rf', path], check=True, stderr=subprocess.DEVNULL)
     except subprocess.CalledProcessError as e:
         if sudo_pwd and os.path.exists(path) and is_linux():
             run_command_sudo(['rm', '-rf', path], sudo_pwd)

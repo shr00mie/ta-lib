@@ -34,11 +34,6 @@ def is_ubuntu() -> bool:
 def is_linux() -> bool:
     return is_debian_based() or is_redhat_based() or is_arch_linux()
 
-def is_macos() -> bool:
-    return sys.platform == 'darwin'
-
-def is_windows() -> bool:
-    return sys.platform == 'win32'
 
 def is_cmake_installed() -> bool:
     try:
@@ -72,29 +67,6 @@ def is_dotnet_installed() -> bool:
     except (subprocess.CalledProcessError, FileNotFoundError):
         return False
 
-def is_wix_installed() -> bool:
-    # For installation, see https://cmake.org/cmake/help/latest/cpack_gen/wix.html#wix-net-tools
-    try:
-        subprocess.run(['wix', '--version'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        return True
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return False
-
-def is_msbuild_installed() -> bool:
-    if sys.platform == "win32":
-        try:
-            vswhere_path = r"C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe"
-            if not os.path.exists(vswhere_path):
-                return False                
-
-            result = subprocess.run([vswhere_path, '-latest', '-products', '*', '-requires', 'Microsoft.Component.MSBuild', '-find', 'MSBuild\\**\\Bin\\MSBuild.exe'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            msbuild_path = result.stdout.decode().strip()
-            if msbuild_path:
-                subprocess.run([msbuild_path, '-version'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                return True
-        except (subprocess.CalledProcessError, FileNotFoundError):
-            return False
-    return False
 
 def is_brew_installed() -> bool:
     try:
@@ -111,11 +83,6 @@ def is_arm64_toolchain_installed() -> bool:
             return True
         except (subprocess.CalledProcessError, FileNotFoundError):
             return False
-    elif is_windows:
-        if not is_msbuild_installed():
-            return False
-
-    # TODO - Add tool specific detection for Windows/MacOS
 
     return sys.platform.machine().lower() in ['aarch64', 'arm64']
 
@@ -126,11 +93,6 @@ def is_x86_64_toolchain_installed() -> bool:
             return True
         except (subprocess.CalledProcessError, FileNotFoundError):
             return False
-    elif is_windows:
-        if not is_msbuild_installed():
-            return False
-
-    # TODO - Add more tool specific detection for Windows/MacOS
 
     return sys.platform.machine().lower() in ['amd64', 'x86_64']
 
@@ -142,7 +104,6 @@ def is_i386_toolchain_installed() -> bool:
         except (subprocess.CalledProcessError, FileNotFoundError):
             return False
 
-    # TODO - Add tool specific detection for Windows/MacOS
     return sys.platform.machine().lower() in ['i386', 'i686']
 
 # Utility function to list all assets expected for a release.
@@ -156,10 +117,6 @@ def get_release_assets(version:str) -> list:
     """
     return [
         f'ta-lib-{version}-src.tar.gz',
-        f'ta-lib-{version}-windows-x86_64.msi',
-        f'ta-lib-{version}-windows-x86_64.zip',
-        f'ta-lib-{version}-windows-x86_32.msi',
-        f'ta-lib-{version}-windows-x86_32.zip',
         f'ta-lib_{version}_amd64.deb',
         f'ta-lib_{version}_arm64.deb',
         f'ta-lib_{version}_i386.deb',
