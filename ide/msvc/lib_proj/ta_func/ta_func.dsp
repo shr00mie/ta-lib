@@ -304,247 +304,186 @@ SOURCE=..\..\..\..\src\ta_func\ta_CCI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL2CROWS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3BLACKCROWS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3INSIDE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3LINESTRIKE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3OUTSIDE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3STARSINSOUTH.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDL3WHITESOLDIERS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLABANDONEDBABY.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLADVANCEBLOCK.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLBELTHOLD.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLBREAKAWAY.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLCLOSINGMARUBOZU.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLCONCEALBABYSWALL.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLCOUNTERATTACK.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLDARKCLOUDCOVER.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLDOJI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLDOJISTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLDRAGONFLYDOJI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLENGULFING.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLEVENINGDOJISTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLEVENINGSTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLGAPSIDESIDEWHITE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLGRAVESTONEDOJI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHAMMER.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHANGINGMAN.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHARAMI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHARAMICROSS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHIGHWAVE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHIKKAKE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHIKKAKEMOD.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLHOMINGPIGEON.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLIDENTICAL3CROWS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLINNECK.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLINVERTEDHAMMER.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLKICKING.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLKICKINGBYLENGTH.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLLADDERBOTTOM.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLLONGLEGGEDDOJI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLLONGLINE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLMARUBOZU.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLMATCHINGLOW.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLMATHOLD.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLMORNINGDOJISTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLMORNINGSTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLONNECK.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLPIERCING.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLRICKSHAWMAN.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLRISEFALL3METHODS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSEPARATINGLINES.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSHOOTINGSTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSHORTLINE.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSPINNINGTOP.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSTALLEDPATTERN.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLSTICKSANDWICH.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLTAKURI.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLTASUKIGAP.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLTHRUSTING.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLTRISTAR.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLUNIQUE3RIVER.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLUPSIDEGAP2CROWS.c
 # End Source File
 # Begin Source File
 
-SOURCE=..\..\..\..\src\ta_func\ta_CDLXSIDEGAP3METHODS.c
 # End Source File
 # Begin Source File
 

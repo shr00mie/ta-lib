@@ -2346,8 +2346,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL2CROWS Core::Cdl2Crows
-         #define TA_CDL2CROWS_Lookback Core::Cdl2CrowsLookback
 
          static int Cdl3BlackCrowsLookback( void );
 
@@ -2429,8 +2427,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3BLACKCROWS Core::Cdl3BlackCrows
-         #define TA_CDL3BLACKCROWS_Lookback Core::Cdl3BlackCrowsLookback
 
          static int Cdl3InsideLookback( void );
 
@@ -2512,8 +2508,6 @@ namespace TicTacTec
                                                cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3INSIDE Core::Cdl3Inside
-         #define TA_CDL3INSIDE_Lookback Core::Cdl3InsideLookback
 
          static int Cdl3LineStrikeLookback( void );
 
@@ -2595,8 +2589,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3LINESTRIKE Core::Cdl3LineStrike
-         #define TA_CDL3LINESTRIKE_Lookback Core::Cdl3LineStrikeLookback
 
          static int Cdl3OutsideLookback( void );
 
@@ -2678,8 +2670,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3OUTSIDE Core::Cdl3Outside
-         #define TA_CDL3OUTSIDE_Lookback Core::Cdl3OutsideLookback
 
          static int Cdl3StarsInSouthLookback( void );
 
@@ -2761,8 +2751,6 @@ namespace TicTacTec
                                                      cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3STARSINSOUTH Core::Cdl3StarsInSouth
-         #define TA_CDL3STARSINSOUTH_Lookback Core::Cdl3StarsInSouthLookback
 
          static int Cdl3WhiteSoldiersLookback( void );
 
@@ -2844,8 +2832,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDL3WHITESOLDIERS Core::Cdl3WhiteSoldiers
-         #define TA_CDL3WHITESOLDIERS_Lookback Core::Cdl3WhiteSoldiersLookback
 
          static int CdlAbandonedBabyLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -2935,8 +2921,6 @@ namespace TicTacTec
                                                      cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLABANDONEDBABY Core::CdlAbandonedBaby
-         #define TA_CDLABANDONEDBABY_Lookback Core::CdlAbandonedBabyLookback
 
          static int CdlAdvanceBlockLookback( void );
 
@@ -3018,8 +3002,6 @@ namespace TicTacTec
                                                     cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLADVANCEBLOCK Core::CdlAdvanceBlock
-         #define TA_CDLADVANCEBLOCK_Lookback Core::CdlAdvanceBlockLookback
 
          static int CdlBeltHoldLookback( void );
 
@@ -3101,8 +3083,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLBELTHOLD Core::CdlBeltHold
-         #define TA_CDLBELTHOLD_Lookback Core::CdlBeltHoldLookback
 
          static int CdlBreakawayLookback( void );
 
@@ -3184,8 +3164,6 @@ namespace TicTacTec
                                                  cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLBREAKAWAY Core::CdlBreakaway
-         #define TA_CDLBREAKAWAY_Lookback Core::CdlBreakawayLookback
 
          static int CdlClosingMarubozuLookback( void );
 
@@ -3267,8 +3245,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLCLOSINGMARUBOZU Core::CdlClosingMarubozu
-         #define TA_CDLCLOSINGMARUBOZU_Lookback Core::CdlClosingMarubozuLookback
 
          static int CdlConcealBabysWallLookback( void );
 
@@ -3350,8 +3326,6 @@ namespace TicTacTec
                                                         cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLCONCEALBABYSWALL Core::CdlConcealBabysWall
-         #define TA_CDLCONCEALBABYSWALL_Lookback Core::CdlConcealBabysWallLookback
 
          static int CdlCounterAttackLookback( void );
 
@@ -3433,8 +3407,6 @@ namespace TicTacTec
                                                      cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLCOUNTERATTACK Core::CdlCounterAttack
-         #define TA_CDLCOUNTERATTACK_Lookback Core::CdlCounterAttackLookback
 
          static int CdlDarkCloudCoverLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -3524,8 +3496,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLDARKCLOUDCOVER Core::CdlDarkCloudCover
-         #define TA_CDLDARKCLOUDCOVER_Lookback Core::CdlDarkCloudCoverLookback
 
          static int CdlDojiLookback( void );
 
@@ -3607,8 +3577,6 @@ namespace TicTacTec
                                             cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLDOJI Core::CdlDoji
-         #define TA_CDLDOJI_Lookback Core::CdlDojiLookback
 
          static int CdlDojiStarLookback( void );
 
@@ -3690,8 +3658,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLDOJISTAR Core::CdlDojiStar
-         #define TA_CDLDOJISTAR_Lookback Core::CdlDojiStarLookback
 
          static int CdlDragonflyDojiLookback( void );
 
@@ -3773,8 +3739,6 @@ namespace TicTacTec
                                                      cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLDRAGONFLYDOJI Core::CdlDragonflyDoji
-         #define TA_CDLDRAGONFLYDOJI_Lookback Core::CdlDragonflyDojiLookback
 
          static int CdlEngulfingLookback( void );
 
@@ -3856,8 +3820,6 @@ namespace TicTacTec
                                                  cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLENGULFING Core::CdlEngulfing
-         #define TA_CDLENGULFING_Lookback Core::CdlEngulfingLookback
 
          static int CdlEveningDojiStarLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -3947,8 +3909,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLEVENINGDOJISTAR Core::CdlEveningDojiStar
-         #define TA_CDLEVENINGDOJISTAR_Lookback Core::CdlEveningDojiStarLookback
 
          static int CdlEveningStarLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -4038,8 +3998,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLEVENINGSTAR Core::CdlEveningStar
-         #define TA_CDLEVENINGSTAR_Lookback Core::CdlEveningStarLookback
 
          static int CdlGapSideSideWhiteLookback( void );
 
@@ -4121,8 +4079,6 @@ namespace TicTacTec
                                                         cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLGAPSIDESIDEWHITE Core::CdlGapSideSideWhite
-         #define TA_CDLGAPSIDESIDEWHITE_Lookback Core::CdlGapSideSideWhiteLookback
 
          static int CdlGravestoneDojiLookback( void );
 
@@ -4204,8 +4160,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLGRAVESTONEDOJI Core::CdlGravestoneDoji
-         #define TA_CDLGRAVESTONEDOJI_Lookback Core::CdlGravestoneDojiLookback
 
          static int CdlHammerLookback( void );
 
@@ -4287,8 +4241,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHAMMER Core::CdlHammer
-         #define TA_CDLHAMMER_Lookback Core::CdlHammerLookback
 
          static int CdlHangingManLookback( void );
 
@@ -4370,8 +4322,6 @@ namespace TicTacTec
                                                   cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHANGINGMAN Core::CdlHangingMan
-         #define TA_CDLHANGINGMAN_Lookback Core::CdlHangingManLookback
 
          static int CdlHaramiLookback( void );
 
@@ -4453,8 +4403,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHARAMI Core::CdlHarami
-         #define TA_CDLHARAMI_Lookback Core::CdlHaramiLookback
 
          static int CdlHaramiCrossLookback( void );
 
@@ -4536,8 +4484,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHARAMICROSS Core::CdlHaramiCross
-         #define TA_CDLHARAMICROSS_Lookback Core::CdlHaramiCrossLookback
 
          static int CdlHignWaveLookback( void );
 
@@ -4619,8 +4565,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHIGHWAVE Core::CdlHignWave
-         #define TA_CDLHIGHWAVE_Lookback Core::CdlHignWaveLookback
 
          static int CdlHikkakeLookback( void );
 
@@ -4702,8 +4646,6 @@ namespace TicTacTec
                                                cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHIKKAKE Core::CdlHikkake
-         #define TA_CDLHIKKAKE_Lookback Core::CdlHikkakeLookback
 
          static int CdlHikkakeModLookback( void );
 
@@ -4785,8 +4727,6 @@ namespace TicTacTec
                                                   cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHIKKAKEMOD Core::CdlHikkakeMod
-         #define TA_CDLHIKKAKEMOD_Lookback Core::CdlHikkakeModLookback
 
          static int CdlHomingPigeonLookback( void );
 
@@ -4868,8 +4808,6 @@ namespace TicTacTec
                                                     cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLHOMINGPIGEON Core::CdlHomingPigeon
-         #define TA_CDLHOMINGPIGEON_Lookback Core::CdlHomingPigeonLookback
 
          static int CdlIdentical3CrowsLookback( void );
 
@@ -4951,8 +4889,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLIDENTICAL3CROWS Core::CdlIdentical3Crows
-         #define TA_CDLIDENTICAL3CROWS_Lookback Core::CdlIdentical3CrowsLookback
 
          static int CdlInNeckLookback( void );
 
@@ -5034,8 +4970,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLINNECK Core::CdlInNeck
-         #define TA_CDLINNECK_Lookback Core::CdlInNeckLookback
 
          static int CdlInvertedHammerLookback( void );
 
@@ -5117,8 +5051,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLINVERTEDHAMMER Core::CdlInvertedHammer
-         #define TA_CDLINVERTEDHAMMER_Lookback Core::CdlInvertedHammerLookback
 
          static int CdlKickingLookback( void );
 
@@ -5200,8 +5132,6 @@ namespace TicTacTec
                                                cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLKICKING Core::CdlKicking
-         #define TA_CDLKICKING_Lookback Core::CdlKickingLookback
 
          static int CdlKickingByLengthLookback( void );
 
@@ -5283,8 +5213,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLKICKINGBYLENGTH Core::CdlKickingByLength
-         #define TA_CDLKICKINGBYLENGTH_Lookback Core::CdlKickingByLengthLookback
 
          static int CdlLadderBottomLookback( void );
 
@@ -5366,8 +5294,6 @@ namespace TicTacTec
                                                     cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLLADDERBOTTOM Core::CdlLadderBottom
-         #define TA_CDLLADDERBOTTOM_Lookback Core::CdlLadderBottomLookback
 
          static int CdlLongLeggedDojiLookback( void );
 
@@ -5449,8 +5375,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLLONGLEGGEDDOJI Core::CdlLongLeggedDoji
-         #define TA_CDLLONGLEGGEDDOJI_Lookback Core::CdlLongLeggedDojiLookback
 
          static int CdlLongLineLookback( void );
 
@@ -5532,8 +5456,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLLONGLINE Core::CdlLongLine
-         #define TA_CDLLONGLINE_Lookback Core::CdlLongLineLookback
 
          static int CdlMarubozuLookback( void );
 
@@ -5615,8 +5537,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLMARUBOZU Core::CdlMarubozu
-         #define TA_CDLMARUBOZU_Lookback Core::CdlMarubozuLookback
 
          static int CdlMatchingLowLookback( void );
 
@@ -5698,8 +5618,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLMATCHINGLOW Core::CdlMatchingLow
-         #define TA_CDLMATCHINGLOW_Lookback Core::CdlMatchingLowLookback
 
          static int CdlMatHoldLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -5789,8 +5707,6 @@ namespace TicTacTec
                                                cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLMATHOLD Core::CdlMatHold
-         #define TA_CDLMATHOLD_Lookback Core::CdlMatHoldLookback
 
          static int CdlMorningDojiStarLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -5880,8 +5796,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLMORNINGDOJISTAR Core::CdlMorningDojiStar
-         #define TA_CDLMORNINGDOJISTAR_Lookback Core::CdlMorningDojiStarLookback
 
          static int CdlMorningStarLookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
@@ -5971,8 +5885,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLMORNINGSTAR Core::CdlMorningStar
-         #define TA_CDLMORNINGSTAR_Lookback Core::CdlMorningStarLookback
 
          static int CdlOnNeckLookback( void );
 
@@ -6054,8 +5966,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLONNECK Core::CdlOnNeck
-         #define TA_CDLONNECK_Lookback Core::CdlOnNeckLookback
 
          static int CdlPiercingLookback( void );
 
@@ -6137,8 +6047,6 @@ namespace TicTacTec
                                                 cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLPIERCING Core::CdlPiercing
-         #define TA_CDLPIERCING_Lookback Core::CdlPiercingLookback
 
          static int CdlRickshawManLookback( void );
 
@@ -6220,8 +6128,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLRICKSHAWMAN Core::CdlRickshawMan
-         #define TA_CDLRICKSHAWMAN_Lookback Core::CdlRickshawManLookback
 
          static int CdlRiseFall3MethodsLookback( void );
 
@@ -6303,8 +6209,6 @@ namespace TicTacTec
                                                         cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLRISEFALL3METHODS Core::CdlRiseFall3Methods
-         #define TA_CDLRISEFALL3METHODS_Lookback Core::CdlRiseFall3MethodsLookback
 
          static int CdlSeperatingLinesLookback( void );
 
@@ -6386,8 +6290,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSEPARATINGLINES Core::CdlSeperatingLines
-         #define TA_CDLSEPARATINGLINES_Lookback Core::CdlSeperatingLinesLookback
 
          static int CdlShootingStarLookback( void );
 
@@ -6469,8 +6371,6 @@ namespace TicTacTec
                                                     cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSHOOTINGSTAR Core::CdlShootingStar
-         #define TA_CDLSHOOTINGSTAR_Lookback Core::CdlShootingStarLookback
 
          static int CdlShortLineLookback( void );
 
@@ -6552,8 +6452,6 @@ namespace TicTacTec
                                                  cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSHORTLINE Core::CdlShortLine
-         #define TA_CDLSHORTLINE_Lookback Core::CdlShortLineLookback
 
          static int CdlSpinningTopLookback( void );
 
@@ -6635,8 +6533,6 @@ namespace TicTacTec
                                                    cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSPINNINGTOP Core::CdlSpinningTop
-         #define TA_CDLSPINNINGTOP_Lookback Core::CdlSpinningTopLookback
 
          static int CdlStalledPatternLookback( void );
 
@@ -6718,8 +6614,6 @@ namespace TicTacTec
                                                       cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSTALLEDPATTERN Core::CdlStalledPattern
-         #define TA_CDLSTALLEDPATTERN_Lookback Core::CdlStalledPatternLookback
 
          static int CdlStickSandwichLookback( void );
 
@@ -6801,8 +6695,6 @@ namespace TicTacTec
                                                      cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLSTICKSANDWICH Core::CdlStickSandwich
-         #define TA_CDLSTICKSANDWICH_Lookback Core::CdlStickSandwichLookback
 
          static int CdlTakuriLookback( void );
 
@@ -6884,8 +6776,6 @@ namespace TicTacTec
                                               cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLTAKURI Core::CdlTakuri
-         #define TA_CDLTAKURI_Lookback Core::CdlTakuriLookback
 
          static int CdlTasukiGapLookback( void );
 
@@ -6967,8 +6857,6 @@ namespace TicTacTec
                                                  cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLTASUKIGAP Core::CdlTasukiGap
-         #define TA_CDLTASUKIGAP_Lookback Core::CdlTasukiGapLookback
 
          static int CdlThrustingLookback( void );
 
@@ -7050,8 +6938,6 @@ namespace TicTacTec
                                                  cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLTHRUSTING Core::CdlThrusting
-         #define TA_CDLTHRUSTING_Lookback Core::CdlThrustingLookback
 
          static int CdlTristarLookback( void );
 
@@ -7133,8 +7019,6 @@ namespace TicTacTec
                                                cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLTRISTAR Core::CdlTristar
-         #define TA_CDLTRISTAR_Lookback Core::CdlTristarLookback
 
          static int CdlUnique3RiverLookback( void );
 
@@ -7216,8 +7100,6 @@ namespace TicTacTec
                                                     cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLUNIQUE3RIVER Core::CdlUnique3River
-         #define TA_CDLUNIQUE3RIVER_Lookback Core::CdlUnique3RiverLookback
 
          static int CdlUpsideGap2CrowsLookback( void );
 
@@ -7299,8 +7181,6 @@ namespace TicTacTec
                                                        cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLUPSIDEGAP2CROWS Core::CdlUpsideGap2Crows
-         #define TA_CDLUPSIDEGAP2CROWS_Lookback Core::CdlUpsideGap2CrowsLookback
 
          static int CdlXSideGap3MethodsLookback( void );
 
@@ -7382,8 +7262,6 @@ namespace TicTacTec
                                                         cli::array<int>^  outInteger );
          #endif
 
-         #define TA_CDLXSIDEGAP3METHODS Core::CdlXSideGap3Methods
-         #define TA_CDLXSIDEGAP3METHODS_Lookback Core::CdlXSideGap3MethodsLookback
 
          static int CeilLookback( void );
 

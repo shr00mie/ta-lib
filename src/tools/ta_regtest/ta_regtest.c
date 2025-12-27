@@ -45,7 +45,6 @@
  *  MMDDYY BY   Description
  *  -------------------------------------------------------------------
  *  063001 MF   First version (initial framework only).
- *  090404 MF   Add test_candlestick
  *  110206 AC   Change volume and open interest to double
  *  122506 MF   Add MININDEX,MAXINDEX,MINMAX and MINMAXINDEX.
  *  101812 AB   Add AVGDEV.
@@ -273,7 +272,6 @@ static ErrorNumber testTAFunction_ALL( void )
    DO_TEST( test_func_stddev,   "STDDEV,VAR" );
    DO_TEST( test_func_avgdev,   "AVGDEV" );
    DO_TEST( test_func_bbands,   "BBANDS" );
-   DO_TEST( test_candlestick,   "All Candlesticks" );
 
    return TA_TEST_PASS; /* All tests succeeded. */
 }

@@ -9,13 +9,6 @@
    #include "ta_func.h"
 #endif
 
-/* TA_CandleSetting is the one setting struct */
-typedef struct {
-    TA_CandleSettingType    settingType;
-    TA_RangeType            rangeType;
-    int                     avgPeriod;
-    double                  factor;
-} TA_CandleSetting;
 
 /* This interface is used exclusively INTERNALY to the TA-LIB.
  * There is nothing for the end-user here ;->
@@ -106,8 +99,6 @@ typedef struct
    /* For handling the unstable period of some TA function. */
    unsigned int unstablePeriod[TA_FUNC_UNST_ALL];
 
-   /* For handling the candlestick global settings */
-   TA_CandleSetting candleSettings[TA_AllCandleSettings];
 
 } TA_LibcPriv;
 

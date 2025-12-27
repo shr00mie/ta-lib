@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version='1.0' encoding='utf-8'?>
 <FinancialFunctions>
-	<!-- ACCBANDS -->
+	
 	<FinancialFunction>
 		<Abbreviation>ACCBANDS</Abbreviation>
 		<CamelCaseName>Accbands</CamelCaseName>
@@ -64,7 +64,7 @@
 	</FinancialFunction>
 
 
-	<!-- ACOS -->
+	
 	<FinancialFunction>
 		<Abbreviation>ACOS</Abbreviation>
 		<CamelCaseName>Acos</CamelCaseName>
@@ -88,7 +88,7 @@
 	</FinancialFunction>
 
 
-	<!-- AD -->
+	
 	<FinancialFunction>
 		<Abbreviation>AD</Abbreviation>
 		<CamelCaseName>Ad</CamelCaseName>
@@ -124,7 +124,7 @@
 	</FinancialFunction>
 
 
-	<!-- ADD -->
+	
 	<FinancialFunction>
 		<Abbreviation>ADD</Abbreviation>
 		<CamelCaseName>Add</CamelCaseName>
@@ -152,7 +152,7 @@
 	</FinancialFunction>
 
 
-	<!-- ADOSC -->
+	
 	<FinancialFunction>
 		<Abbreviation>ADOSC</Abbreviation>
 		<CamelCaseName>AdOsc</CamelCaseName>
@@ -216,7 +216,7 @@
 	</FinancialFunction>
 
 
-	<!-- ADX -->
+	
 	<FinancialFunction>
 		<Abbreviation>ADX</Abbreviation>
 		<CamelCaseName>Adx</CamelCaseName>
@@ -266,7 +266,7 @@
 	</FinancialFunction>
 
 
-	<!-- ADXR -->
+	
 	<FinancialFunction>
 		<Abbreviation>ADXR</Abbreviation>
 		<CamelCaseName>Adxr</CamelCaseName>
@@ -316,7 +316,7 @@
 	</FinancialFunction>
 
 
-	<!-- APO -->
+	
 	<FinancialFunction>
 		<Abbreviation>APO</Abbreviation>
 		<CamelCaseName>Apo</CamelCaseName>
@@ -374,7 +374,7 @@
 	</FinancialFunction>
 
 
-	<!-- AROON -->
+	
 	<FinancialFunction>
 		<Abbreviation>AROON</Abbreviation>
 		<CamelCaseName>Aroon</CamelCaseName>
@@ -424,7 +424,7 @@
 	</FinancialFunction>
 
 
-	<!-- AROONOSC -->
+	
 	<FinancialFunction>
 		<Abbreviation>AROONOSC</Abbreviation>
 		<CamelCaseName>AroonOsc</CamelCaseName>
@@ -467,7 +467,7 @@
 	</FinancialFunction>
 
 
-	<!-- ASIN -->
+	
 	<FinancialFunction>
 		<Abbreviation>ASIN</Abbreviation>
 		<CamelCaseName>Asin</CamelCaseName>
@@ -491,7 +491,7 @@
 	</FinancialFunction>
 
 
-	<!-- ATAN -->
+	
 	<FinancialFunction>
 		<Abbreviation>ATAN</Abbreviation>
 		<CamelCaseName>Atan</CamelCaseName>
@@ -515,7 +515,7 @@
 	</FinancialFunction>
 
 
-	<!-- ATR -->
+	
 	<FinancialFunction>
 		<Abbreviation>ATR</Abbreviation>
 		<CamelCaseName>Atr</CamelCaseName>
@@ -565,7 +565,7 @@
 	</FinancialFunction>
 
 
-	<!-- AVGPRICE -->
+	
 	<FinancialFunction>
 		<Abbreviation>AVGPRICE</Abbreviation>
 		<CamelCaseName>AvgPrice</CamelCaseName>
@@ -604,7 +604,7 @@
 	</FinancialFunction>
 
 
-	<!-- AVGDEV -->
+	
 	<FinancialFunction>
 		<Abbreviation>AVGDEV</Abbreviation>
 		<CamelCaseName>AvgDev</CamelCaseName>
@@ -646,7 +646,7 @@
 	</FinancialFunction>
 
 
-	<!-- BBANDS -->
+	
 	<FinancialFunction>
 		<Abbreviation>BBANDS</Abbreviation>
 		<CamelCaseName>Bbands</CamelCaseName>
@@ -736,7 +736,7 @@
 	</FinancialFunction>
 
 
-	<!-- BETA -->
+	
 	<FinancialFunction>
 		<Abbreviation>BETA</Abbreviation>
 		<CamelCaseName>Beta</CamelCaseName>
@@ -779,7 +779,7 @@
 	</FinancialFunction>
 
 
-	<!-- BOP -->
+	
 	<FinancialFunction>
 		<Abbreviation>BOP</Abbreviation>
 		<CamelCaseName>Bop</CamelCaseName>
@@ -815,7 +815,7 @@
 	</FinancialFunction>
 
 
-	<!-- CCI -->
+	
 	<FinancialFunction>
 		<Abbreviation>CCI</Abbreviation>
 		<CamelCaseName>Cci</CamelCaseName>
@@ -862,2498 +862,7 @@
 	</FinancialFunction>
 
 
-	<!-- CDL2CROWS -->
-	<FinancialFunction>
-		<Abbreviation>CDL2CROWS</Abbreviation>
-		<CamelCaseName>Cdl2Crows</CamelCaseName>
-		<ShortDescription>Two Crows</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3BLACKCROWS -->
-	<FinancialFunction>
-		<Abbreviation>CDL3BLACKCROWS</Abbreviation>
-		<CamelCaseName>Cdl3BlackCrows</CamelCaseName>
-		<ShortDescription>Three Black Crows</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3INSIDE -->
-	<FinancialFunction>
-		<Abbreviation>CDL3INSIDE</Abbreviation>
-		<CamelCaseName>Cdl3Inside</CamelCaseName>
-		<ShortDescription>Three Inside Up/Down</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3LINESTRIKE -->
-	<FinancialFunction>
-		<Abbreviation>CDL3LINESTRIKE</Abbreviation>
-		<CamelCaseName>Cdl3LineStrike</CamelCaseName>
-		<ShortDescription>Three-Line Strike </ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3OUTSIDE -->
-	<FinancialFunction>
-		<Abbreviation>CDL3OUTSIDE</Abbreviation>
-		<CamelCaseName>Cdl3Outside</CamelCaseName>
-		<ShortDescription>Three Outside Up/Down</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3STARSINSOUTH -->
-	<FinancialFunction>
-		<Abbreviation>CDL3STARSINSOUTH</Abbreviation>
-		<CamelCaseName>Cdl3StarsInSouth</CamelCaseName>
-		<ShortDescription>Three Stars In The South</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDL3WHITESOLDIERS -->
-	<FinancialFunction>
-		<Abbreviation>CDL3WHITESOLDIERS</Abbreviation>
-		<CamelCaseName>Cdl3WhiteSoldiers</CamelCaseName>
-		<ShortDescription>Three Advancing White Soldiers</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLABANDONEDBABY -->
-	<FinancialFunction>
-		<Abbreviation>CDLABANDONEDBABY</Abbreviation>
-		<CamelCaseName>CdlAbandonedBaby</CamelCaseName>
-		<ShortDescription>Abandoned Baby</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>3.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLADVANCEBLOCK -->
-	<FinancialFunction>
-		<Abbreviation>CDLADVANCEBLOCK</Abbreviation>
-		<CamelCaseName>CdlAdvanceBlock</CamelCaseName>
-		<ShortDescription>Advance Block</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLBELTHOLD -->
-	<FinancialFunction>
-		<Abbreviation>CDLBELTHOLD</Abbreviation>
-		<CamelCaseName>CdlBeltHold</CamelCaseName>
-		<ShortDescription>Belt-hold</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLBREAKAWAY -->
-	<FinancialFunction>
-		<Abbreviation>CDLBREAKAWAY</Abbreviation>
-		<CamelCaseName>CdlBreakaway</CamelCaseName>
-		<ShortDescription>Breakaway</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLCLOSINGMARUBOZU -->
-	<FinancialFunction>
-		<Abbreviation>CDLCLOSINGMARUBOZU</Abbreviation>
-		<CamelCaseName>CdlClosingMarubozu</CamelCaseName>
-		<ShortDescription>Closing Marubozu</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLCONCEALBABYSWALL -->
-	<FinancialFunction>
-		<Abbreviation>CDLCONCEALBABYSWALL</Abbreviation>
-		<CamelCaseName>CdlConcealBabysWall</CamelCaseName>
-		<ShortDescription>Concealing Baby Swallow</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLCOUNTERATTACK -->
-	<FinancialFunction>
-		<Abbreviation>CDLCOUNTERATTACK</Abbreviation>
-		<CamelCaseName>CdlCounterAttack</CamelCaseName>
-		<ShortDescription>Counterattack</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLDARKCLOUDCOVER -->
-	<FinancialFunction>
-		<Abbreviation>CDLDARKCLOUDCOVER</Abbreviation>
-		<CamelCaseName>CdlDarkCloudCover</CamelCaseName>
-		<ShortDescription>Dark Cloud Cover</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>5.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLDOJI -->
-	<FinancialFunction>
-		<Abbreviation>CDLDOJI</Abbreviation>
-		<CamelCaseName>CdlDoji</CamelCaseName>
-		<ShortDescription>Doji</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLDOJISTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLDOJISTAR</Abbreviation>
-		<CamelCaseName>CdlDojiStar</CamelCaseName>
-		<ShortDescription>Doji Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLDRAGONFLYDOJI -->
-	<FinancialFunction>
-		<Abbreviation>CDLDRAGONFLYDOJI</Abbreviation>
-		<CamelCaseName>CdlDragonflyDoji</CamelCaseName>
-		<ShortDescription>Dragonfly Doji</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLENGULFING -->
-	<FinancialFunction>
-		<Abbreviation>CDLENGULFING</Abbreviation>
-		<CamelCaseName>CdlEngulfing</CamelCaseName>
-		<ShortDescription>Engulfing Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLEVENINGDOJISTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLEVENINGDOJISTAR</Abbreviation>
-		<CamelCaseName>CdlEveningDojiStar</CamelCaseName>
-		<ShortDescription>Evening Doji Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>3.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLEVENINGSTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLEVENINGSTAR</Abbreviation>
-		<CamelCaseName>CdlEveningStar</CamelCaseName>
-		<ShortDescription>Evening Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>3.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLGAPSIDESIDEWHITE -->
-	<FinancialFunction>
-		<Abbreviation>CDLGAPSIDESIDEWHITE</Abbreviation>
-		<CamelCaseName>CdlGapSideSideWhite</CamelCaseName>
-		<ShortDescription>Up/Down-gap side-by-side white lines</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLGRAVESTONEDOJI -->
-	<FinancialFunction>
-		<Abbreviation>CDLGRAVESTONEDOJI</Abbreviation>
-		<CamelCaseName>CdlGravestoneDoji</CamelCaseName>
-		<ShortDescription>Gravestone Doji</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHAMMER -->
-	<FinancialFunction>
-		<Abbreviation>CDLHAMMER</Abbreviation>
-		<CamelCaseName>CdlHammer</CamelCaseName>
-		<ShortDescription>Hammer</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHANGINGMAN -->
-	<FinancialFunction>
-		<Abbreviation>CDLHANGINGMAN</Abbreviation>
-		<CamelCaseName>CdlHangingMan</CamelCaseName>
-		<ShortDescription>Hanging Man</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHARAMI -->
-	<FinancialFunction>
-		<Abbreviation>CDLHARAMI</Abbreviation>
-		<CamelCaseName>CdlHarami</CamelCaseName>
-		<ShortDescription>Harami Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHARAMICROSS -->
-	<FinancialFunction>
-		<Abbreviation>CDLHARAMICROSS</Abbreviation>
-		<CamelCaseName>CdlHaramiCross</CamelCaseName>
-		<ShortDescription>Harami Cross Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHIGHWAVE -->
-	<FinancialFunction>
-		<Abbreviation>CDLHIGHWAVE</Abbreviation>
-		<CamelCaseName>CdlHignWave</CamelCaseName>
-		<ShortDescription>High-Wave Candle</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHIKKAKE -->
-	<FinancialFunction>
-		<Abbreviation>CDLHIKKAKE</Abbreviation>
-		<CamelCaseName>CdlHikkake</CamelCaseName>
-		<ShortDescription>Hikkake Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHIKKAKEMOD -->
-	<FinancialFunction>
-		<Abbreviation>CDLHIKKAKEMOD</Abbreviation>
-		<CamelCaseName>CdlHikkakeMod</CamelCaseName>
-		<ShortDescription>Modified Hikkake Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLHOMINGPIGEON -->
-	<FinancialFunction>
-		<Abbreviation>CDLHOMINGPIGEON</Abbreviation>
-		<CamelCaseName>CdlHomingPigeon</CamelCaseName>
-		<ShortDescription>Homing Pigeon</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLIDENTICAL3CROWS -->
-	<FinancialFunction>
-		<Abbreviation>CDLIDENTICAL3CROWS</Abbreviation>
-		<CamelCaseName>CdlIdentical3Crows</CamelCaseName>
-		<ShortDescription>Identical Three Crows</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLINNECK -->
-	<FinancialFunction>
-		<Abbreviation>CDLINNECK</Abbreviation>
-		<CamelCaseName>CdlInNeck</CamelCaseName>
-		<ShortDescription>In-Neck Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLINVERTEDHAMMER -->
-	<FinancialFunction>
-		<Abbreviation>CDLINVERTEDHAMMER</Abbreviation>
-		<CamelCaseName>CdlInvertedHammer</CamelCaseName>
-		<ShortDescription>Inverted Hammer</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLKICKING -->
-	<FinancialFunction>
-		<Abbreviation>CDLKICKING</Abbreviation>
-		<CamelCaseName>CdlKicking</CamelCaseName>
-		<ShortDescription>Kicking</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLKICKINGBYLENGTH -->
-	<FinancialFunction>
-		<Abbreviation>CDLKICKINGBYLENGTH</Abbreviation>
-		<CamelCaseName>CdlKickingByLength</CamelCaseName>
-		<ShortDescription>Kicking - bull/bear determined by the longer marubozu</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLLADDERBOTTOM -->
-	<FinancialFunction>
-		<Abbreviation>CDLLADDERBOTTOM</Abbreviation>
-		<CamelCaseName>CdlLadderBottom</CamelCaseName>
-		<ShortDescription>Ladder Bottom</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLLONGLEGGEDDOJI -->
-	<FinancialFunction>
-		<Abbreviation>CDLLONGLEGGEDDOJI</Abbreviation>
-		<CamelCaseName>CdlLongLeggedDoji</CamelCaseName>
-		<ShortDescription>Long Legged Doji</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLLONGLINE -->
-	<FinancialFunction>
-		<Abbreviation>CDLLONGLINE</Abbreviation>
-		<CamelCaseName>CdlLongLine</CamelCaseName>
-		<ShortDescription>Long Line Candle</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLMARUBOZU -->
-	<FinancialFunction>
-		<Abbreviation>CDLMARUBOZU</Abbreviation>
-		<CamelCaseName>CdlMarubozu</CamelCaseName>
-		<ShortDescription>Marubozu</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLMATCHINGLOW -->
-	<FinancialFunction>
-		<Abbreviation>CDLMATCHINGLOW</Abbreviation>
-		<CamelCaseName>CdlMatchingLow</CamelCaseName>
-		<ShortDescription>Matching Low</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLMATHOLD -->
-	<FinancialFunction>
-		<Abbreviation>CDLMATHOLD</Abbreviation>
-		<CamelCaseName>CdlMatHold</CamelCaseName>
-		<ShortDescription>Mat Hold</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>5.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLMORNINGDOJISTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLMORNINGDOJISTAR</Abbreviation>
-		<CamelCaseName>CdlMorningDojiStar</CamelCaseName>
-		<ShortDescription>Morning Doji Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>3.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLMORNINGSTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLMORNINGSTAR</Abbreviation>
-		<CamelCaseName>CdlMorningStar</CamelCaseName>
-		<ShortDescription>Morning Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OptionalInputArguments>
-			<OptionalInputArgument>
-				<Name>Penetration</Name>
-				<ShortDescription>Percentage of penetration of a candle within another candle</ShortDescription>
-				<Type>Double</Type>
-				<Range>
-					<Minimum>0.000000e+0</Minimum>
-					<Maximum>3.000000e+37</Maximum>
-					<Precision>0</Precision>
-					<SuggestedStart>0.000000e+0</SuggestedStart>
-					<SuggestedEnd>0.000000e+0</SuggestedEnd>
-					<SuggestedIncrement>0.000000e+0</SuggestedIncrement>
-				</Range>
-				<DefaultValue>3.000000e-1</DefaultValue>
-			</OptionalInputArgument>
-		</OptionalInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLONNECK -->
-	<FinancialFunction>
-		<Abbreviation>CDLONNECK</Abbreviation>
-		<CamelCaseName>CdlOnNeck</CamelCaseName>
-		<ShortDescription>On-Neck Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLPIERCING -->
-	<FinancialFunction>
-		<Abbreviation>CDLPIERCING</Abbreviation>
-		<CamelCaseName>CdlPiercing</CamelCaseName>
-		<ShortDescription>Piercing Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLRICKSHAWMAN -->
-	<FinancialFunction>
-		<Abbreviation>CDLRICKSHAWMAN</Abbreviation>
-		<CamelCaseName>CdlRickshawMan</CamelCaseName>
-		<ShortDescription>Rickshaw Man</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLRISEFALL3METHODS -->
-	<FinancialFunction>
-		<Abbreviation>CDLRISEFALL3METHODS</Abbreviation>
-		<CamelCaseName>CdlRiseFall3Methods</CamelCaseName>
-		<ShortDescription>Rising/Falling Three Methods</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSEPARATINGLINES -->
-	<FinancialFunction>
-		<Abbreviation>CDLSEPARATINGLINES</Abbreviation>
-		<CamelCaseName>CdlSeperatingLines</CamelCaseName>
-		<ShortDescription>Separating Lines</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSHOOTINGSTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLSHOOTINGSTAR</Abbreviation>
-		<CamelCaseName>CdlShootingStar</CamelCaseName>
-		<ShortDescription>Shooting Star</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSHORTLINE -->
-	<FinancialFunction>
-		<Abbreviation>CDLSHORTLINE</Abbreviation>
-		<CamelCaseName>CdlShortLine</CamelCaseName>
-		<ShortDescription>Short Line Candle</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSPINNINGTOP -->
-	<FinancialFunction>
-		<Abbreviation>CDLSPINNINGTOP</Abbreviation>
-		<CamelCaseName>CdlSpinningTop</CamelCaseName>
-		<ShortDescription>Spinning Top</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSTALLEDPATTERN -->
-	<FinancialFunction>
-		<Abbreviation>CDLSTALLEDPATTERN</Abbreviation>
-		<CamelCaseName>CdlStalledPattern</CamelCaseName>
-		<ShortDescription>Stalled Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLSTICKSANDWICH -->
-	<FinancialFunction>
-		<Abbreviation>CDLSTICKSANDWICH</Abbreviation>
-		<CamelCaseName>CdlStickSandwich</CamelCaseName>
-		<ShortDescription>Stick Sandwich</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLTAKURI -->
-	<FinancialFunction>
-		<Abbreviation>CDLTAKURI</Abbreviation>
-		<CamelCaseName>CdlTakuri</CamelCaseName>
-		<ShortDescription>Takuri (Dragonfly Doji with very long lower shadow)</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLTASUKIGAP -->
-	<FinancialFunction>
-		<Abbreviation>CDLTASUKIGAP</Abbreviation>
-		<CamelCaseName>CdlTasukiGap</CamelCaseName>
-		<ShortDescription>Tasuki Gap</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLTHRUSTING -->
-	<FinancialFunction>
-		<Abbreviation>CDLTHRUSTING</Abbreviation>
-		<CamelCaseName>CdlThrusting</CamelCaseName>
-		<ShortDescription>Thrusting Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLTRISTAR -->
-	<FinancialFunction>
-		<Abbreviation>CDLTRISTAR</Abbreviation>
-		<CamelCaseName>CdlTristar</CamelCaseName>
-		<ShortDescription>Tristar Pattern</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLUNIQUE3RIVER -->
-	<FinancialFunction>
-		<Abbreviation>CDLUNIQUE3RIVER</Abbreviation>
-		<CamelCaseName>CdlUnique3River</CamelCaseName>
-		<ShortDescription>Unique 3 River</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLUPSIDEGAP2CROWS -->
-	<FinancialFunction>
-		<Abbreviation>CDLUPSIDEGAP2CROWS</Abbreviation>
-		<CamelCaseName>CdlUpsideGap2Crows</CamelCaseName>
-		<ShortDescription>Upside Gap Two Crows</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CDLXSIDEGAP3METHODS -->
-	<FinancialFunction>
-		<Abbreviation>CDLXSIDEGAP3METHODS</Abbreviation>
-		<CamelCaseName>CdlXSideGap3Methods</CamelCaseName>
-		<ShortDescription>Upside/Downside Gap Three Methods</ShortDescription>
-		<GroupId>Pattern Recognition</GroupId>
-		<Flags>
-			<Flag>Candlestick</Flag>
-		</Flags>
-		<RequiredInputArguments>
-			<RequiredInputArgument>
-				<Type>Open</Type>
-				<Name>Open</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>High</Type>
-				<Name>High</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Low</Type>
-				<Name>Low</Name>
-			</RequiredInputArgument>
-			<RequiredInputArgument>
-				<Type>Close</Type>
-				<Name>Close</Name>
-			</RequiredInputArgument>
-		</RequiredInputArguments>
-		<OutputArguments>
-			<OutputArgument>
-				<Type>Integer Array</Type>
-				<Name>outInteger</Name>
-				<Flags>
-					<Flag>Line</Flag>
-				</Flags>
-			</OutputArgument>
-		</OutputArguments>
-	</FinancialFunction>
-
-
-	<!-- CEIL -->
+	
 	<FinancialFunction>
 		<Abbreviation>CEIL</Abbreviation>
 		<CamelCaseName>Ceil</CamelCaseName>
@@ -3377,7 +886,7 @@
 	</FinancialFunction>
 
 
-	<!-- CMO -->
+	
 	<FinancialFunction>
 		<Abbreviation>CMO</Abbreviation>
 		<CamelCaseName>Cmo</CamelCaseName>
@@ -3419,11 +928,11 @@
 	</FinancialFunction>
 
 
-	<!-- CORREL -->
+	
 	<FinancialFunction>
 		<Abbreviation>CORREL</Abbreviation>
 		<CamelCaseName>Correl</CamelCaseName>
-		<ShortDescription>Pearson&apos;s Correlation Coefficient (r)</ShortDescription>
+		<ShortDescription>Pearson's Correlation Coefficient (r)</ShortDescription>
 		<GroupId>Statistic Functions</GroupId>
 		<RequiredInputArguments>
 			<RequiredInputArgument>
@@ -3462,7 +971,7 @@
 	</FinancialFunction>
 
 
-	<!-- COS -->
+	
 	<FinancialFunction>
 		<Abbreviation>COS</Abbreviation>
 		<CamelCaseName>Cos</CamelCaseName>
@@ -3486,7 +995,7 @@
 	</FinancialFunction>
 
 
-	<!-- COSH -->
+	
 	<FinancialFunction>
 		<Abbreviation>COSH</Abbreviation>
 		<CamelCaseName>Cosh</CamelCaseName>
@@ -3510,7 +1019,7 @@
 	</FinancialFunction>
 
 
-	<!-- DEMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>DEMA</Abbreviation>
 		<CamelCaseName>Dema</CamelCaseName>
@@ -3552,7 +1061,7 @@
 	</FinancialFunction>
 
 
-	<!-- DIV -->
+	
 	<FinancialFunction>
 		<Abbreviation>DIV</Abbreviation>
 		<CamelCaseName>Div</CamelCaseName>
@@ -3580,7 +1089,7 @@
 	</FinancialFunction>
 
 
-	<!-- DX -->
+	
 	<FinancialFunction>
 		<Abbreviation>DX</Abbreviation>
 		<CamelCaseName>Dx</CamelCaseName>
@@ -3630,7 +1139,7 @@
 	</FinancialFunction>
 
 
-	<!-- EMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>EMA</Abbreviation>
 		<CamelCaseName>Ema</CamelCaseName>
@@ -3673,7 +1182,7 @@
 	</FinancialFunction>
 
 
-	<!-- EXP -->
+	
 	<FinancialFunction>
 		<Abbreviation>EXP</Abbreviation>
 		<CamelCaseName>Exp</CamelCaseName>
@@ -3697,7 +1206,7 @@
 	</FinancialFunction>
 
 
-	<!-- FLOOR -->
+	
 	<FinancialFunction>
 		<Abbreviation>FLOOR</Abbreviation>
 		<CamelCaseName>Floor</CamelCaseName>
@@ -3721,7 +1230,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_DCPERIOD -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_DCPERIOD</Abbreviation>
 		<CamelCaseName>HtDcPeriod</CamelCaseName>
@@ -3748,7 +1257,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_DCPHASE -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_DCPHASE</Abbreviation>
 		<CamelCaseName>HtDcPhase</CamelCaseName>
@@ -3775,7 +1284,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_PHASOR -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_PHASOR</Abbreviation>
 		<CamelCaseName>HtPhasor</CamelCaseName>
@@ -3809,7 +1318,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_SINE -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_SINE</Abbreviation>
 		<CamelCaseName>HtSine</CamelCaseName>
@@ -3843,7 +1352,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_TRENDLINE -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_TRENDLINE</Abbreviation>
 		<CamelCaseName>HtTrendline</CamelCaseName>
@@ -3871,7 +1380,7 @@
 	</FinancialFunction>
 
 
-	<!-- HT_TRENDMODE -->
+	
 	<FinancialFunction>
 		<Abbreviation>HT_TRENDMODE</Abbreviation>
 		<CamelCaseName>HtTrendMode</CamelCaseName>
@@ -3898,7 +1407,7 @@
 	</FinancialFunction>
 
 
-	<!-- IMI -->
+	
 	<FinancialFunction>
 		<Abbreviation>IMI</Abbreviation>
 		<CamelCaseName>Imi</CamelCaseName>
@@ -3944,7 +1453,7 @@
 	</FinancialFunction>
 
 
-	<!-- KAMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>KAMA</Abbreviation>
 		<CamelCaseName>Kama</CamelCaseName>
@@ -3987,7 +1496,7 @@
 	</FinancialFunction>
 
 
-	<!-- LINEARREG -->
+	
 	<FinancialFunction>
 		<Abbreviation>LINEARREG</Abbreviation>
 		<CamelCaseName>LinearReg</CamelCaseName>
@@ -4029,7 +1538,7 @@
 	</FinancialFunction>
 
 
-	<!-- LINEARREG_ANGLE -->
+	
 	<FinancialFunction>
 		<Abbreviation>LINEARREG_ANGLE</Abbreviation>
 		<CamelCaseName>LinearRegAngle</CamelCaseName>
@@ -4068,7 +1577,7 @@
 	</FinancialFunction>
 
 
-	<!-- LINEARREG_INTERCEPT -->
+	
 	<FinancialFunction>
 		<Abbreviation>LINEARREG_INTERCEPT</Abbreviation>
 		<CamelCaseName>LinearRegIntercept</CamelCaseName>
@@ -4110,7 +1619,7 @@
 	</FinancialFunction>
 
 
-	<!-- LINEARREG_SLOPE -->
+	
 	<FinancialFunction>
 		<Abbreviation>LINEARREG_SLOPE</Abbreviation>
 		<CamelCaseName>LinearRegSlope</CamelCaseName>
@@ -4149,7 +1658,7 @@
 	</FinancialFunction>
 
 
-	<!-- LN -->
+	
 	<FinancialFunction>
 		<Abbreviation>LN</Abbreviation>
 		<CamelCaseName>Ln</CamelCaseName>
@@ -4173,7 +1682,7 @@
 	</FinancialFunction>
 
 
-	<!-- LOG10 -->
+	
 	<FinancialFunction>
 		<Abbreviation>LOG10</Abbreviation>
 		<CamelCaseName>Log10</CamelCaseName>
@@ -4197,7 +1706,7 @@
 	</FinancialFunction>
 
 
-	<!-- MA -->
+	
 	<FinancialFunction>
 		<Abbreviation>MA</Abbreviation>
 		<CamelCaseName>MovingAverage</CamelCaseName>
@@ -4245,7 +1754,7 @@
 	</FinancialFunction>
 
 
-	<!-- MACD -->
+	
 	<FinancialFunction>
 		<Abbreviation>MACD</Abbreviation>
 		<CamelCaseName>Macd</CamelCaseName>
@@ -4324,7 +1833,7 @@
 	</FinancialFunction>
 
 
-	<!-- MACDEXT -->
+	
 	<FinancialFunction>
 		<Abbreviation>MACDEXT</Abbreviation>
 		<CamelCaseName>MacdExt</CamelCaseName>
@@ -4421,7 +1930,7 @@
 	</FinancialFunction>
 
 
-	<!-- MACDFIX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MACDFIX</Abbreviation>
 		<CamelCaseName>MacdFix</CamelCaseName>
@@ -4474,7 +1983,7 @@
 	</FinancialFunction>
 
 
-	<!-- MAMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>MAMA</Abbreviation>
 		<CamelCaseName>Mama</CamelCaseName>
@@ -4539,7 +2048,7 @@
 	</FinancialFunction>
 
 
-	<!-- MAVP -->
+	
 	<FinancialFunction>
 		<Abbreviation>MAVP</Abbreviation>
 		<CamelCaseName>MovingAverageVariablePeriod</CamelCaseName>
@@ -4604,7 +2113,7 @@
 	</FinancialFunction>
 
 
-	<!-- MAX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MAX</Abbreviation>
 		<CamelCaseName>Max</CamelCaseName>
@@ -4646,7 +2155,7 @@
 	</FinancialFunction>
 
 
-	<!-- MAXINDEX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MAXINDEX</Abbreviation>
 		<CamelCaseName>MaxIndex</CamelCaseName>
@@ -4685,7 +2194,7 @@
 	</FinancialFunction>
 
 
-	<!-- MEDPRICE -->
+	
 	<FinancialFunction>
 		<Abbreviation>MEDPRICE</Abbreviation>
 		<CamelCaseName>MedPrice</CamelCaseName>
@@ -4716,7 +2225,7 @@
 	</FinancialFunction>
 
 
-	<!-- MFI -->
+	
 	<FinancialFunction>
 		<Abbreviation>MFI</Abbreviation>
 		<CamelCaseName>Mfi</CamelCaseName>
@@ -4770,7 +2279,7 @@
 	</FinancialFunction>
 
 
-	<!-- MIDPOINT -->
+	
 	<FinancialFunction>
 		<Abbreviation>MIDPOINT</Abbreviation>
 		<CamelCaseName>MidPoint</CamelCaseName>
@@ -4812,7 +2321,7 @@
 	</FinancialFunction>
 
 
-	<!-- MIDPRICE -->
+	
 	<FinancialFunction>
 		<Abbreviation>MIDPRICE</Abbreviation>
 		<CamelCaseName>MidPrice</CamelCaseName>
@@ -4858,7 +2367,7 @@
 	</FinancialFunction>
 
 
-	<!-- MIN -->
+	
 	<FinancialFunction>
 		<Abbreviation>MIN</Abbreviation>
 		<CamelCaseName>Min</CamelCaseName>
@@ -4900,7 +2409,7 @@
 	</FinancialFunction>
 
 
-	<!-- MININDEX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MININDEX</Abbreviation>
 		<CamelCaseName>MinIndex</CamelCaseName>
@@ -4939,7 +2448,7 @@
 	</FinancialFunction>
 
 
-	<!-- MINMAX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MINMAX</Abbreviation>
 		<CamelCaseName>MinMax</CamelCaseName>
@@ -4988,7 +2497,7 @@
 	</FinancialFunction>
 
 
-	<!-- MINMAXINDEX -->
+	
 	<FinancialFunction>
 		<Abbreviation>MINMAXINDEX</Abbreviation>
 		<CamelCaseName>MinMaxIndex</CamelCaseName>
@@ -5034,7 +2543,7 @@
 	</FinancialFunction>
 
 
-	<!-- MINUS_DI -->
+	
 	<FinancialFunction>
 		<Abbreviation>MINUS_DI</Abbreviation>
 		<CamelCaseName>MinusDI</CamelCaseName>
@@ -5084,7 +2593,7 @@
 	</FinancialFunction>
 
 
-	<!-- MINUS_DM -->
+	
 	<FinancialFunction>
 		<Abbreviation>MINUS_DM</Abbreviation>
 		<CamelCaseName>MinusDM</CamelCaseName>
@@ -5130,7 +2639,7 @@
 	</FinancialFunction>
 
 
-	<!-- MOM -->
+	
 	<FinancialFunction>
 		<Abbreviation>MOM</Abbreviation>
 		<CamelCaseName>Mom</CamelCaseName>
@@ -5169,7 +2678,7 @@
 	</FinancialFunction>
 
 
-	<!-- MULT -->
+	
 	<FinancialFunction>
 		<Abbreviation>MULT</Abbreviation>
 		<CamelCaseName>Mult</CamelCaseName>
@@ -5197,7 +2706,7 @@
 	</FinancialFunction>
 
 
-	<!-- NATR -->
+	
 	<FinancialFunction>
 		<Abbreviation>NATR</Abbreviation>
 		<CamelCaseName>Natr</CamelCaseName>
@@ -5247,7 +2756,7 @@
 	</FinancialFunction>
 
 
-	<!-- OBV -->
+	
 	<FinancialFunction>
 		<Abbreviation>OBV</Abbreviation>
 		<CamelCaseName>Obv</CamelCaseName>
@@ -5275,7 +2784,7 @@
 	</FinancialFunction>
 
 
-	<!-- PLUS_DI -->
+	
 	<FinancialFunction>
 		<Abbreviation>PLUS_DI</Abbreviation>
 		<CamelCaseName>PlusDI</CamelCaseName>
@@ -5325,7 +2834,7 @@
 	</FinancialFunction>
 
 
-	<!-- PLUS_DM -->
+	
 	<FinancialFunction>
 		<Abbreviation>PLUS_DM</Abbreviation>
 		<CamelCaseName>PlusDM</CamelCaseName>
@@ -5371,7 +2880,7 @@
 	</FinancialFunction>
 
 
-	<!-- PPO -->
+	
 	<FinancialFunction>
 		<Abbreviation>PPO</Abbreviation>
 		<CamelCaseName>Ppo</CamelCaseName>
@@ -5429,7 +2938,7 @@
 	</FinancialFunction>
 
 
-	<!-- ROC -->
+	
 	<FinancialFunction>
 		<Abbreviation>ROC</Abbreviation>
 		<CamelCaseName>Roc</CamelCaseName>
@@ -5468,7 +2977,7 @@
 	</FinancialFunction>
 
 
-	<!-- ROCP -->
+	
 	<FinancialFunction>
 		<Abbreviation>ROCP</Abbreviation>
 		<CamelCaseName>RocP</CamelCaseName>
@@ -5507,7 +3016,7 @@
 	</FinancialFunction>
 
 
-	<!-- ROCR -->
+	
 	<FinancialFunction>
 		<Abbreviation>ROCR</Abbreviation>
 		<CamelCaseName>RocR</CamelCaseName>
@@ -5546,7 +3055,7 @@
 	</FinancialFunction>
 
 
-	<!-- ROCR100 -->
+	
 	<FinancialFunction>
 		<Abbreviation>ROCR100</Abbreviation>
 		<CamelCaseName>RocR100</CamelCaseName>
@@ -5585,7 +3094,7 @@
 	</FinancialFunction>
 
 
-	<!-- RSI -->
+	
 	<FinancialFunction>
 		<Abbreviation>RSI</Abbreviation>
 		<CamelCaseName>Rsi</CamelCaseName>
@@ -5627,7 +3136,7 @@
 	</FinancialFunction>
 
 
-	<!-- SAR -->
+	
 	<FinancialFunction>
 		<Abbreviation>SAR</Abbreviation>
 		<CamelCaseName>Sar</CamelCaseName>
@@ -5688,7 +3197,7 @@
 	</FinancialFunction>
 
 
-	<!-- SAREXT -->
+	
 	<FinancialFunction>
 		<Abbreviation>SAREXT</Abbreviation>
 		<CamelCaseName>SarExt</CamelCaseName>
@@ -5833,7 +3342,7 @@
 	</FinancialFunction>
 
 
-	<!-- SIN -->
+	
 	<FinancialFunction>
 		<Abbreviation>SIN</Abbreviation>
 		<CamelCaseName>Sin</CamelCaseName>
@@ -5857,7 +3366,7 @@
 	</FinancialFunction>
 
 
-	<!-- SINH -->
+	
 	<FinancialFunction>
 		<Abbreviation>SINH</Abbreviation>
 		<CamelCaseName>Sinh</CamelCaseName>
@@ -5881,7 +3390,7 @@
 	</FinancialFunction>
 
 
-	<!-- SMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>SMA</Abbreviation>
 		<CamelCaseName>Sma</CamelCaseName>
@@ -5923,7 +3432,7 @@
 	</FinancialFunction>
 
 
-	<!-- SQRT -->
+	
 	<FinancialFunction>
 		<Abbreviation>SQRT</Abbreviation>
 		<CamelCaseName>Sqrt</CamelCaseName>
@@ -5947,7 +3456,7 @@
 	</FinancialFunction>
 
 
-	<!-- STDDEV -->
+	
 	<FinancialFunction>
 		<Abbreviation>STDDEV</Abbreviation>
 		<CamelCaseName>StdDev</CamelCaseName>
@@ -6000,7 +3509,7 @@
 	</FinancialFunction>
 
 
-	<!-- STOCH -->
+	
 	<FinancialFunction>
 		<Abbreviation>STOCH</Abbreviation>
 		<CamelCaseName>Stoch</CamelCaseName>
@@ -6092,7 +3601,7 @@
 	</FinancialFunction>
 
 
-	<!-- STOCHF -->
+	
 	<FinancialFunction>
 		<Abbreviation>STOCHF</Abbreviation>
 		<CamelCaseName>StochF</CamelCaseName>
@@ -6165,7 +3674,7 @@
 	</FinancialFunction>
 
 
-	<!-- STOCHRSI -->
+	
 	<FinancialFunction>
 		<Abbreviation>STOCHRSI</Abbreviation>
 		<CamelCaseName>StochRsi</CamelCaseName>
@@ -6246,7 +3755,7 @@
 	</FinancialFunction>
 
 
-	<!-- SUB -->
+	
 	<FinancialFunction>
 		<Abbreviation>SUB</Abbreviation>
 		<CamelCaseName>Sub</CamelCaseName>
@@ -6274,7 +3783,7 @@
 	</FinancialFunction>
 
 
-	<!-- SUM -->
+	
 	<FinancialFunction>
 		<Abbreviation>SUM</Abbreviation>
 		<CamelCaseName>Sum</CamelCaseName>
@@ -6313,7 +3822,7 @@
 	</FinancialFunction>
 
 
-	<!-- T3 -->
+	
 	<FinancialFunction>
 		<Abbreviation>T3</Abbreviation>
 		<CamelCaseName>T3</CamelCaseName>
@@ -6370,7 +3879,7 @@
 	</FinancialFunction>
 
 
-	<!-- TAN -->
+	
 	<FinancialFunction>
 		<Abbreviation>TAN</Abbreviation>
 		<CamelCaseName>Tan</CamelCaseName>
@@ -6394,7 +3903,7 @@
 	</FinancialFunction>
 
 
-	<!-- TANH -->
+	
 	<FinancialFunction>
 		<Abbreviation>TANH</Abbreviation>
 		<CamelCaseName>Tanh</CamelCaseName>
@@ -6418,7 +3927,7 @@
 	</FinancialFunction>
 
 
-	<!-- TEMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>TEMA</Abbreviation>
 		<CamelCaseName>Tema</CamelCaseName>
@@ -6460,7 +3969,7 @@
 	</FinancialFunction>
 
 
-	<!-- TRANGE -->
+	
 	<FinancialFunction>
 		<Abbreviation>TRANGE</Abbreviation>
 		<CamelCaseName>TrueRange</CamelCaseName>
@@ -6492,7 +4001,7 @@
 	</FinancialFunction>
 
 
-	<!-- TRIMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>TRIMA</Abbreviation>
 		<CamelCaseName>Trima</CamelCaseName>
@@ -6534,7 +4043,7 @@
 	</FinancialFunction>
 
 
-	<!-- TRIX -->
+	
 	<FinancialFunction>
 		<Abbreviation>TRIX</Abbreviation>
 		<CamelCaseName>Trix</CamelCaseName>
@@ -6573,7 +4082,7 @@
 	</FinancialFunction>
 
 
-	<!-- TSF -->
+	
 	<FinancialFunction>
 		<Abbreviation>TSF</Abbreviation>
 		<CamelCaseName>Tsf</CamelCaseName>
@@ -6615,7 +4124,7 @@
 	</FinancialFunction>
 
 
-	<!-- TYPPRICE -->
+	
 	<FinancialFunction>
 		<Abbreviation>TYPPRICE</Abbreviation>
 		<CamelCaseName>TypPrice</CamelCaseName>
@@ -6650,7 +4159,7 @@
 	</FinancialFunction>
 
 
-	<!-- ULTOSC -->
+	
 	<FinancialFunction>
 		<Abbreviation>ULTOSC</Abbreviation>
 		<CamelCaseName>UltOsc</CamelCaseName>
@@ -6723,7 +4232,7 @@
 	</FinancialFunction>
 
 
-	<!-- VAR -->
+	
 	<FinancialFunction>
 		<Abbreviation>VAR</Abbreviation>
 		<CamelCaseName>Variance</CamelCaseName>
@@ -6776,7 +4285,7 @@
 	</FinancialFunction>
 
 
-	<!-- WCLPRICE -->
+	
 	<FinancialFunction>
 		<Abbreviation>WCLPRICE</Abbreviation>
 		<CamelCaseName>WclPrice</CamelCaseName>
@@ -6811,11 +4320,11 @@
 	</FinancialFunction>
 
 
-	<!-- WILLR -->
+	
 	<FinancialFunction>
 		<Abbreviation>WILLR</Abbreviation>
 		<CamelCaseName>WillR</CamelCaseName>
-		<ShortDescription>Williams&apos; %R</ShortDescription>
+		<ShortDescription>Williams' %R</ShortDescription>
 		<GroupId>Momentum Indicators</GroupId>
 		<RequiredInputArguments>
 			<RequiredInputArgument>
@@ -6858,7 +4367,7 @@
 	</FinancialFunction>
 
 
-	<!-- WMA -->
+	
 	<FinancialFunction>
 		<Abbreviation>WMA</Abbreviation>
 		<CamelCaseName>Wma</CamelCaseName>

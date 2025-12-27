@@ -1,7 +1,6 @@
 #ifndef TA_TEST_FUNC_H
 #define TA_TEST_FUNC_H
 
-ErrorNumber test_candlestick  ( TA_History *history );
 ErrorNumber test_func_adx     ( TA_History *history );
 ErrorNumber test_func_ma      ( TA_History *history );
 ErrorNumber test_func_trange  ( TA_History *history );

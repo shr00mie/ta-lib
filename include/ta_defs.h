@@ -386,23 +386,5 @@ ENUM_BEGIN( RangeType )
    ENUM_DEFINE( TA_RangeType_Shadows, Shadows )
 ENUM_END( RangeType )
 
-/* The TA_CandleSettingType enum specifies which kind of setting to consider;
- * the settings are based on the parts of the candle and the common words
- * indicating the length (short, long, very long)
- */
-ENUM_BEGIN( CandleSettingType )
-    ENUM_DEFINE( TA_BodyLong, BodyLong ),
-    ENUM_DEFINE( TA_BodyVeryLong, BodyVeryLong ),
-    ENUM_DEFINE( TA_BodyShort, BodyShort ),
-    ENUM_DEFINE( TA_BodyDoji, BodyDoji ),
-    ENUM_DEFINE( TA_ShadowLong, ShadowLong ),
-    ENUM_DEFINE( TA_ShadowVeryLong, ShadowVeryLong ),
-    ENUM_DEFINE( TA_ShadowShort, ShadowShort ),
-    ENUM_DEFINE( TA_ShadowVeryShort, ShadowVeryShort ),
-    ENUM_DEFINE( TA_Near, Near ),
-    ENUM_DEFINE( TA_Far, Far ),
-    ENUM_DEFINE( TA_Equal, Equal ),
-    ENUM_DEFINE( TA_AllCandleSettings, AllCandleSettings )
-ENUM_END( CandleSettingType )
 
 #endif

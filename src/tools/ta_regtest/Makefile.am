@@ -11,7 +11,6 @@ ta_regtest_SOURCES = ta_regtest.c \
 	ta_test_func/test_mom.c \
 	ta_test_func/test_sar.c \
 	ta_test_func/test_rsi.c \
-	ta_test_func/test_candlestick.c \
 	ta_test_func/test_per_ema.c \
 	ta_test_func/test_per_hlc.c \
 	ta_test_func/test_stoch.c \

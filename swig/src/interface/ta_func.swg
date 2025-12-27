@@ -506,13 +506,11 @@ int TA_CCI_Lookback( int           optInTimePeriod );  /* From 2 to 100000 */
 
 
 /*
- * TA_CDL2CROWS - Two Crows
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL2CROWS( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -522,17 +520,14 @@ TA_RetCode TA_CDL2CROWS( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL2CROWS_Lookback( void );
 
 
 /*
- * TA_CDL3BLACKCROWS - Three Black Crows
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3BLACKCROWS( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -542,17 +537,14 @@ TA_RetCode TA_CDL3BLACKCROWS( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3BLACKCROWS_Lookback( void );
 
 
 /*
- * TA_CDL3INSIDE - Three Inside Up/Down
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3INSIDE( int           START_IDX,
                           int           END_IDX,
                           const double *IN_ARRAY /* inOpen */,
                           const double *IN_ARRAY /* inHigh */,
@@ -562,17 +554,14 @@ TA_RetCode TA_CDL3INSIDE( int           START_IDX,
                           int          *OUT_SIZE,
                           int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3INSIDE_Lookback( void );
 
 
 /*
- * TA_CDL3LINESTRIKE - Three-Line Strike 
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3LINESTRIKE( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -582,17 +571,14 @@ TA_RetCode TA_CDL3LINESTRIKE( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3LINESTRIKE_Lookback( void );
 
 
 /*
- * TA_CDL3OUTSIDE - Three Outside Up/Down
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3OUTSIDE( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -602,17 +588,14 @@ TA_RetCode TA_CDL3OUTSIDE( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3OUTSIDE_Lookback( void );
 
 
 /*
- * TA_CDL3STARSINSOUTH - Three Stars In The South
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3STARSINSOUTH( int           START_IDX,
                                 int           END_IDX,
                                 const double *IN_ARRAY /* inOpen */,
                                 const double *IN_ARRAY /* inHigh */,
@@ -622,17 +605,14 @@ TA_RetCode TA_CDL3STARSINSOUTH( int           START_IDX,
                                 int          *OUT_SIZE,
                                 int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3STARSINSOUTH_Lookback( void );
 
 
 /*
- * TA_CDL3WHITESOLDIERS - Three Advancing White Soldiers
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDL3WHITESOLDIERS( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -642,11 +622,9 @@ TA_RetCode TA_CDL3WHITESOLDIERS( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDL3WHITESOLDIERS_Lookback( void );
 
 
 /*
- * TA_CDLABANDONEDBABY - Abandoned Baby
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -658,7 +636,6 @@ int TA_CDL3WHITESOLDIERS_Lookback( void );
  * 
  * 
  */
-TA_RetCode TA_CDLABANDONEDBABY( int           START_IDX,
                                 int           END_IDX,
                                 const double *IN_ARRAY /* inOpen */,
                                 const double *IN_ARRAY /* inHigh */,
@@ -669,17 +646,14 @@ TA_RetCode TA_CDLABANDONEDBABY( int           START_IDX,
                                 int          *OUT_SIZE,
                                 int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLABANDONEDBABY_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLADVANCEBLOCK - Advance Block
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLADVANCEBLOCK( int           START_IDX,
                                int           END_IDX,
                                const double *IN_ARRAY /* inOpen */,
                                const double *IN_ARRAY /* inHigh */,
@@ -689,17 +663,14 @@ TA_RetCode TA_CDLADVANCEBLOCK( int           START_IDX,
                                int          *OUT_SIZE,
                                int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLADVANCEBLOCK_Lookback( void );
 
 
 /*
- * TA_CDLBELTHOLD - Belt-hold
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLBELTHOLD( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -709,17 +680,14 @@ TA_RetCode TA_CDLBELTHOLD( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLBELTHOLD_Lookback( void );
 
 
 /*
- * TA_CDLBREAKAWAY - Breakaway
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLBREAKAWAY( int           START_IDX,
                             int           END_IDX,
                             const double *IN_ARRAY /* inOpen */,
                             const double *IN_ARRAY /* inHigh */,
@@ -729,17 +697,14 @@ TA_RetCode TA_CDLBREAKAWAY( int           START_IDX,
                             int          *OUT_SIZE,
                             int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLBREAKAWAY_Lookback( void );
 
 
 /*
- * TA_CDLCLOSINGMARUBOZU - Closing Marubozu
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLCLOSINGMARUBOZU( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -749,17 +714,14 @@ TA_RetCode TA_CDLCLOSINGMARUBOZU( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLCLOSINGMARUBOZU_Lookback( void );
 
 
 /*
- * TA_CDLCONCEALBABYSWALL - Concealing Baby Swallow
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLCONCEALBABYSWALL( int           START_IDX,
                                    int           END_IDX,
                                    const double *IN_ARRAY /* inOpen */,
                                    const double *IN_ARRAY /* inHigh */,
@@ -769,17 +731,14 @@ TA_RetCode TA_CDLCONCEALBABYSWALL( int           START_IDX,
                                    int          *OUT_SIZE,
                                    int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLCONCEALBABYSWALL_Lookback( void );
 
 
 /*
- * TA_CDLCOUNTERATTACK - Counterattack
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLCOUNTERATTACK( int           START_IDX,
                                 int           END_IDX,
                                 const double *IN_ARRAY /* inOpen */,
                                 const double *IN_ARRAY /* inHigh */,
@@ -789,11 +748,9 @@ TA_RetCode TA_CDLCOUNTERATTACK( int           START_IDX,
                                 int          *OUT_SIZE,
                                 int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLCOUNTERATTACK_Lookback( void );
 
 
 /*
- * TA_CDLDARKCLOUDCOVER - Dark Cloud Cover
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -805,7 +762,6 @@ int TA_CDLCOUNTERATTACK_Lookback( void );
  * 
  * 
  */
-TA_RetCode TA_CDLDARKCLOUDCOVER( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -816,17 +772,14 @@ TA_RetCode TA_CDLDARKCLOUDCOVER( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLDARKCLOUDCOVER_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLDOJI - Doji
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLDOJI( int           START_IDX,
                        int           END_IDX,
                        const double *IN_ARRAY /* inOpen */,
                        const double *IN_ARRAY /* inHigh */,
@@ -836,17 +789,14 @@ TA_RetCode TA_CDLDOJI( int           START_IDX,
                        int          *OUT_SIZE,
                        int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLDOJI_Lookback( void );
 
 
 /*
- * TA_CDLDOJISTAR - Doji Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLDOJISTAR( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -856,17 +806,14 @@ TA_RetCode TA_CDLDOJISTAR( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLDOJISTAR_Lookback( void );
 
 
 /*
- * TA_CDLDRAGONFLYDOJI - Dragonfly Doji
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLDRAGONFLYDOJI( int           START_IDX,
                                 int           END_IDX,
                                 const double *IN_ARRAY /* inOpen */,
                                 const double *IN_ARRAY /* inHigh */,
@@ -876,17 +823,14 @@ TA_RetCode TA_CDLDRAGONFLYDOJI( int           START_IDX,
                                 int          *OUT_SIZE,
                                 int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLDRAGONFLYDOJI_Lookback( void );
 
 
 /*
- * TA_CDLENGULFING - Engulfing Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLENGULFING( int           START_IDX,
                             int           END_IDX,
                             const double *IN_ARRAY /* inOpen */,
                             const double *IN_ARRAY /* inHigh */,
@@ -896,11 +840,9 @@ TA_RetCode TA_CDLENGULFING( int           START_IDX,
                             int          *OUT_SIZE,
                             int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLENGULFING_Lookback( void );
 
 
 /*
- * TA_CDLEVENINGDOJISTAR - Evening Doji Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -912,7 +854,6 @@ int TA_CDLENGULFING_Lookback( void );
  * 
  * 
  */
-TA_RetCode TA_CDLEVENINGDOJISTAR( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -923,11 +864,9 @@ TA_RetCode TA_CDLEVENINGDOJISTAR( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLEVENINGDOJISTAR_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLEVENINGSTAR - Evening Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -939,7 +878,6 @@ int TA_CDLEVENINGDOJISTAR_Lookback( double        optInPenetration );  /* From 0
  * 
  * 
  */
-TA_RetCode TA_CDLEVENINGSTAR( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -950,17 +888,14 @@ TA_RetCode TA_CDLEVENINGSTAR( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLEVENINGSTAR_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLGAPSIDESIDEWHITE - Up/Down-gap side-by-side white lines
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLGAPSIDESIDEWHITE( int           START_IDX,
                                    int           END_IDX,
                                    const double *IN_ARRAY /* inOpen */,
                                    const double *IN_ARRAY /* inHigh */,
@@ -970,17 +905,14 @@ TA_RetCode TA_CDLGAPSIDESIDEWHITE( int           START_IDX,
                                    int          *OUT_SIZE,
                                    int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLGAPSIDESIDEWHITE_Lookback( void );
 
 
 /*
- * TA_CDLGRAVESTONEDOJI - Gravestone Doji
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLGRAVESTONEDOJI( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -990,17 +922,14 @@ TA_RetCode TA_CDLGRAVESTONEDOJI( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLGRAVESTONEDOJI_Lookback( void );
 
 
 /*
- * TA_CDLHAMMER - Hammer
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHAMMER( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -1010,17 +939,14 @@ TA_RetCode TA_CDLHAMMER( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHAMMER_Lookback( void );
 
 
 /*
- * TA_CDLHANGINGMAN - Hanging Man
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHANGINGMAN( int           START_IDX,
                              int           END_IDX,
                              const double *IN_ARRAY /* inOpen */,
                              const double *IN_ARRAY /* inHigh */,
@@ -1030,17 +956,14 @@ TA_RetCode TA_CDLHANGINGMAN( int           START_IDX,
                              int          *OUT_SIZE,
                              int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHANGINGMAN_Lookback( void );
 
 
 /*
- * TA_CDLHARAMI - Harami Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHARAMI( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -1050,17 +973,14 @@ TA_RetCode TA_CDLHARAMI( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHARAMI_Lookback( void );
 
 
 /*
- * TA_CDLHARAMICROSS - Harami Cross Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHARAMICROSS( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -1070,17 +990,14 @@ TA_RetCode TA_CDLHARAMICROSS( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHARAMICROSS_Lookback( void );
 
 
 /*
- * TA_CDLHIGHWAVE - High-Wave Candle
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHIGHWAVE( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -1090,17 +1007,14 @@ TA_RetCode TA_CDLHIGHWAVE( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHIGHWAVE_Lookback( void );
 
 
 /*
- * TA_CDLHIKKAKE - Hikkake Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHIKKAKE( int           START_IDX,
                           int           END_IDX,
                           const double *IN_ARRAY /* inOpen */,
                           const double *IN_ARRAY /* inHigh */,
@@ -1110,17 +1024,14 @@ TA_RetCode TA_CDLHIKKAKE( int           START_IDX,
                           int          *OUT_SIZE,
                           int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHIKKAKE_Lookback( void );
 
 
 /*
- * TA_CDLHIKKAKEMOD - Modified Hikkake Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHIKKAKEMOD( int           START_IDX,
                              int           END_IDX,
                              const double *IN_ARRAY /* inOpen */,
                              const double *IN_ARRAY /* inHigh */,
@@ -1130,17 +1041,14 @@ TA_RetCode TA_CDLHIKKAKEMOD( int           START_IDX,
                              int          *OUT_SIZE,
                              int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHIKKAKEMOD_Lookback( void );
 
 
 /*
- * TA_CDLHOMINGPIGEON - Homing Pigeon
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLHOMINGPIGEON( int           START_IDX,
                                int           END_IDX,
                                const double *IN_ARRAY /* inOpen */,
                                const double *IN_ARRAY /* inHigh */,
@@ -1150,17 +1058,14 @@ TA_RetCode TA_CDLHOMINGPIGEON( int           START_IDX,
                                int          *OUT_SIZE,
                                int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLHOMINGPIGEON_Lookback( void );
 
 
 /*
- * TA_CDLIDENTICAL3CROWS - Identical Three Crows
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLIDENTICAL3CROWS( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -1170,17 +1075,14 @@ TA_RetCode TA_CDLIDENTICAL3CROWS( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLIDENTICAL3CROWS_Lookback( void );
 
 
 /*
- * TA_CDLINNECK - In-Neck Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLINNECK( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -1190,17 +1092,14 @@ TA_RetCode TA_CDLINNECK( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLINNECK_Lookback( void );
 
 
 /*
- * TA_CDLINVERTEDHAMMER - Inverted Hammer
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLINVERTEDHAMMER( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -1210,17 +1109,14 @@ TA_RetCode TA_CDLINVERTEDHAMMER( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLINVERTEDHAMMER_Lookback( void );
 
 
 /*
- * TA_CDLKICKING - Kicking
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLKICKING( int           START_IDX,
                           int           END_IDX,
                           const double *IN_ARRAY /* inOpen */,
                           const double *IN_ARRAY /* inHigh */,
@@ -1230,17 +1126,14 @@ TA_RetCode TA_CDLKICKING( int           START_IDX,
                           int          *OUT_SIZE,
                           int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLKICKING_Lookback( void );
 
 
 /*
- * TA_CDLKICKINGBYLENGTH - Kicking - bull/bear determined by the longer marubozu
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLKICKINGBYLENGTH( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -1250,17 +1143,14 @@ TA_RetCode TA_CDLKICKINGBYLENGTH( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLKICKINGBYLENGTH_Lookback( void );
 
 
 /*
- * TA_CDLLADDERBOTTOM - Ladder Bottom
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLLADDERBOTTOM( int           START_IDX,
                                int           END_IDX,
                                const double *IN_ARRAY /* inOpen */,
                                const double *IN_ARRAY /* inHigh */,
@@ -1270,17 +1160,14 @@ TA_RetCode TA_CDLLADDERBOTTOM( int           START_IDX,
                                int          *OUT_SIZE,
                                int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLLADDERBOTTOM_Lookback( void );
 
 
 /*
- * TA_CDLLONGLEGGEDDOJI - Long Legged Doji
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLLONGLEGGEDDOJI( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -1290,17 +1177,14 @@ TA_RetCode TA_CDLLONGLEGGEDDOJI( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLLONGLEGGEDDOJI_Lookback( void );
 
 
 /*
- * TA_CDLLONGLINE - Long Line Candle
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLLONGLINE( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -1310,17 +1194,14 @@ TA_RetCode TA_CDLLONGLINE( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLLONGLINE_Lookback( void );
 
 
 /*
- * TA_CDLMARUBOZU - Marubozu
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLMARUBOZU( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -1330,17 +1211,14 @@ TA_RetCode TA_CDLMARUBOZU( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLMARUBOZU_Lookback( void );
 
 
 /*
- * TA_CDLMATCHINGLOW - Matching Low
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLMATCHINGLOW( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -1350,11 +1228,9 @@ TA_RetCode TA_CDLMATCHINGLOW( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLMATCHINGLOW_Lookback( void );
 
 
 /*
- * TA_CDLMATHOLD - Mat Hold
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -1366,7 +1242,6 @@ int TA_CDLMATCHINGLOW_Lookback( void );
  * 
  * 
  */
-TA_RetCode TA_CDLMATHOLD( int           START_IDX,
                           int           END_IDX,
                           const double *IN_ARRAY /* inOpen */,
                           const double *IN_ARRAY /* inHigh */,
@@ -1377,11 +1252,9 @@ TA_RetCode TA_CDLMATHOLD( int           START_IDX,
                           int          *OUT_SIZE,
                           int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLMATHOLD_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLMORNINGDOJISTAR - Morning Doji Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -1393,7 +1266,6 @@ int TA_CDLMATHOLD_Lookback( double        optInPenetration );  /* From 0 to TA_R
  * 
  * 
  */
-TA_RetCode TA_CDLMORNINGDOJISTAR( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -1404,11 +1276,9 @@ TA_RetCode TA_CDLMORNINGDOJISTAR( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLMORNINGDOJISTAR_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLMORNINGSTAR - Morning Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
@@ -1420,7 +1290,6 @@ int TA_CDLMORNINGDOJISTAR_Lookback( double        optInPenetration );  /* From 0
  * 
  * 
  */
-TA_RetCode TA_CDLMORNINGSTAR( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -1431,17 +1300,14 @@ TA_RetCode TA_CDLMORNINGSTAR( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLMORNINGSTAR_Lookback( double        optInPenetration );  /* From 0 to TA_REAL_MAX */
 
 
 /*
- * TA_CDLONNECK - On-Neck Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLONNECK( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -1451,17 +1317,14 @@ TA_RetCode TA_CDLONNECK( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLONNECK_Lookback( void );
 
 
 /*
- * TA_CDLPIERCING - Piercing Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLPIERCING( int           START_IDX,
                            int           END_IDX,
                            const double *IN_ARRAY /* inOpen */,
                            const double *IN_ARRAY /* inHigh */,
@@ -1471,17 +1334,14 @@ TA_RetCode TA_CDLPIERCING( int           START_IDX,
                            int          *OUT_SIZE,
                            int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLPIERCING_Lookback( void );
 
 
 /*
- * TA_CDLRICKSHAWMAN - Rickshaw Man
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLRICKSHAWMAN( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -1491,17 +1351,14 @@ TA_RetCode TA_CDLRICKSHAWMAN( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLRICKSHAWMAN_Lookback( void );
 
 
 /*
- * TA_CDLRISEFALL3METHODS - Rising/Falling Three Methods
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLRISEFALL3METHODS( int           START_IDX,
                                    int           END_IDX,
                                    const double *IN_ARRAY /* inOpen */,
                                    const double *IN_ARRAY /* inHigh */,
@@ -1511,17 +1368,14 @@ TA_RetCode TA_CDLRISEFALL3METHODS( int           START_IDX,
                                    int          *OUT_SIZE,
                                    int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLRISEFALL3METHODS_Lookback( void );
 
 
 /*
- * TA_CDLSEPARATINGLINES - Separating Lines
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSEPARATINGLINES( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -1531,17 +1385,14 @@ TA_RetCode TA_CDLSEPARATINGLINES( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSEPARATINGLINES_Lookback( void );
 
 
 /*
- * TA_CDLSHOOTINGSTAR - Shooting Star
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSHOOTINGSTAR( int           START_IDX,
                                int           END_IDX,
                                const double *IN_ARRAY /* inOpen */,
                                const double *IN_ARRAY /* inHigh */,
@@ -1551,17 +1402,14 @@ TA_RetCode TA_CDLSHOOTINGSTAR( int           START_IDX,
                                int          *OUT_SIZE,
                                int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSHOOTINGSTAR_Lookback( void );
 
 
 /*
- * TA_CDLSHORTLINE - Short Line Candle
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSHORTLINE( int           START_IDX,
                             int           END_IDX,
                             const double *IN_ARRAY /* inOpen */,
                             const double *IN_ARRAY /* inHigh */,
@@ -1571,17 +1419,14 @@ TA_RetCode TA_CDLSHORTLINE( int           START_IDX,
                             int          *OUT_SIZE,
                             int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSHORTLINE_Lookback( void );
 
 
 /*
- * TA_CDLSPINNINGTOP - Spinning Top
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSPINNINGTOP( int           START_IDX,
                               int           END_IDX,
                               const double *IN_ARRAY /* inOpen */,
                               const double *IN_ARRAY /* inHigh */,
@@ -1591,17 +1436,14 @@ TA_RetCode TA_CDLSPINNINGTOP( int           START_IDX,
                               int          *OUT_SIZE,
                               int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSPINNINGTOP_Lookback( void );
 
 
 /*
- * TA_CDLSTALLEDPATTERN - Stalled Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSTALLEDPATTERN( int           START_IDX,
                                  int           END_IDX,
                                  const double *IN_ARRAY /* inOpen */,
                                  const double *IN_ARRAY /* inHigh */,
@@ -1611,17 +1453,14 @@ TA_RetCode TA_CDLSTALLEDPATTERN( int           START_IDX,
                                  int          *OUT_SIZE,
                                  int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSTALLEDPATTERN_Lookback( void );
 
 
 /*
- * TA_CDLSTICKSANDWICH - Stick Sandwich
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLSTICKSANDWICH( int           START_IDX,
                                 int           END_IDX,
                                 const double *IN_ARRAY /* inOpen */,
                                 const double *IN_ARRAY /* inHigh */,
@@ -1631,17 +1470,14 @@ TA_RetCode TA_CDLSTICKSANDWICH( int           START_IDX,
                                 int          *OUT_SIZE,
                                 int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLSTICKSANDWICH_Lookback( void );
 
 
 /*
- * TA_CDLTAKURI - Takuri (Dragonfly Doji with very long lower shadow)
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLTAKURI( int           START_IDX,
                          int           END_IDX,
                          const double *IN_ARRAY /* inOpen */,
                          const double *IN_ARRAY /* inHigh */,
@@ -1651,17 +1487,14 @@ TA_RetCode TA_CDLTAKURI( int           START_IDX,
                          int          *OUT_SIZE,
                          int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLTAKURI_Lookback( void );
 
 
 /*
- * TA_CDLTASUKIGAP - Tasuki Gap
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLTASUKIGAP( int           START_IDX,
                             int           END_IDX,
                             const double *IN_ARRAY /* inOpen */,
                             const double *IN_ARRAY /* inHigh */,
@@ -1671,17 +1504,14 @@ TA_RetCode TA_CDLTASUKIGAP( int           START_IDX,
                             int          *OUT_SIZE,
                             int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLTASUKIGAP_Lookback( void );
 
 
 /*
- * TA_CDLTHRUSTING - Thrusting Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLTHRUSTING( int           START_IDX,
                             int           END_IDX,
                             const double *IN_ARRAY /* inOpen */,
                             const double *IN_ARRAY /* inHigh */,
@@ -1691,17 +1521,14 @@ TA_RetCode TA_CDLTHRUSTING( int           START_IDX,
                             int          *OUT_SIZE,
                             int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLTHRUSTING_Lookback( void );
 
 
 /*
- * TA_CDLTRISTAR - Tristar Pattern
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLTRISTAR( int           START_IDX,
                           int           END_IDX,
                           const double *IN_ARRAY /* inOpen */,
                           const double *IN_ARRAY /* inHigh */,
@@ -1711,17 +1538,14 @@ TA_RetCode TA_CDLTRISTAR( int           START_IDX,
                           int          *OUT_SIZE,
                           int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLTRISTAR_Lookback( void );
 
 
 /*
- * TA_CDLUNIQUE3RIVER - Unique 3 River
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLUNIQUE3RIVER( int           START_IDX,
                                int           END_IDX,
                                const double *IN_ARRAY /* inOpen */,
                                const double *IN_ARRAY /* inHigh */,
@@ -1731,17 +1555,14 @@ TA_RetCode TA_CDLUNIQUE3RIVER( int           START_IDX,
                                int          *OUT_SIZE,
                                int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLUNIQUE3RIVER_Lookback( void );
 
 
 /*
- * TA_CDLUPSIDEGAP2CROWS - Upside Gap Two Crows
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLUPSIDEGAP2CROWS( int           START_IDX,
                                   int           END_IDX,
                                   const double *IN_ARRAY /* inOpen */,
                                   const double *IN_ARRAY /* inHigh */,
@@ -1751,17 +1572,14 @@ TA_RetCode TA_CDLUPSIDEGAP2CROWS( int           START_IDX,
                                   int          *OUT_SIZE,
                                   int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLUPSIDEGAP2CROWS_Lookback( void );
 
 
 /*
- * TA_CDLXSIDEGAP3METHODS - Upside/Downside Gap Three Methods
  * 
  * Input  = Open, High, Low, Close
  * Output = int
  * 
  */
-TA_RetCode TA_CDLXSIDEGAP3METHODS( int           START_IDX,
                                    int           END_IDX,
                                    const double *IN_ARRAY /* inOpen */,
                                    const double *IN_ARRAY /* inHigh */,
@@ -1771,7 +1589,6 @@ TA_RetCode TA_CDLXSIDEGAP3METHODS( int           START_IDX,
                                    int          *OUT_SIZE,
                                    int          *OUT_ARRAY /* outInteger */ );
 
-int TA_CDLXSIDEGAP3METHODS_Lookback( void );
 
 
 /*
