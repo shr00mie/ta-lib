@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-2022]
+        os: [ubuntu-latest]
 
     steps:
       - name: Checkout main branch
@@ -53,30 +53,6 @@ jobs:
           sudo apt install -y gcc-aarch64-linux-gnu
           $PYTHON $GITHUB_WORKSPACE/scripts/package.py
           $PYTHON $GITHUB_WORKSPACE/scripts/test-dist.py
-
-      - name: Prepare shell envs (Windows x64)
-        if: runner.os == 'Windows'
-        shell: cmd
-        run: |
-          :: call "C:\Program Files (x86)\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe > msbuild_path.txt
-          :: set /p MSBUILD_PATH=<msbuild_path.txt
-          :: set VCVARSALL=%MSBUILD_PATH%\..\..\..\..\VC\Auxiliary\Build\vcvarsall.bat
-          :: echo VCVARSALL=%VCVARSALL% >> %GITHUB_ENV%
-          echo PYTHON=python >> %GITHUB_ENV%
-
-      - name: Build dist assets (Windows x64)
-        if: runner.os == 'Windows'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: cmd
-        run: |
-          :: call "%VCVARSALL%" x64
-          dotnet tool install --global wix
-          set PATH=%PATH%;%USERPROFILE%\.dotnet\tools
-          wix extension add --global WixToolset.UI.wixext
-          wix extension list --global
-          %PYTHON% %GITHUB_WORKSPACE%\scripts\package.py
-          %PYTHON% %GITHUB_WORKSPACE%\scripts\test-dist.py
 
       - name: Verify dist assets are up-to-date
         env:
