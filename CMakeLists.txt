@@ -191,6 +191,7 @@ set(LIB_SOURCES
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_MAVP.c"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_HT_TRENDMODE.c"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_IMI.c"
+	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_JMA.c"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_AROONOSC.c"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_MIDPOINT.c"
 	"${CMAKE_CURRENT_SOURCE_DIR}/src/ta_func/ta_PPO.c"
