@@ -445,6 +445,15 @@
 /* Generated */ unsigned int TA_IMI_FramePPLB( const TA_ParamHolderPriv *params )
 ;
 
+/* Generated */ TA_RetCode TA_JMA_FramePP( const TA_ParamHolderPriv *params,
+/* Generated */                           int            startIdx,
+/* Generated */                           int            endIdx,
+/* Generated */                           int           *outBegIdx,
+/* Generated */                           int           *outNBElement )
+;
+/* Generated */ unsigned int TA_JMA_FramePPLB( const TA_ParamHolderPriv *params )
+;
+
 /* Generated */ TA_RetCode TA_KAMA_FramePP( const TA_ParamHolderPriv *params,
 /* Generated */                           int            startIdx,
 /* Generated */                           int            endIdx,
