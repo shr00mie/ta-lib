@@ -1,1 +1,1 @@
-TBD
+[![main nightly tests](https://github.com/shr00mie/ta-lib/actions/workflows/main-nightly-tests.yml/badge.svg)](https://github.com/shr00mie/ta-lib/actions/workflows/main-nightly-tests.yml)

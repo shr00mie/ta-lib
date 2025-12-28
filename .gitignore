@@ -15,6 +15,7 @@ missing
 ltmain.sh
 libtool
 install-sh
+include/ta_config.*
 include/stamp-h1
 depcomp
 configure
