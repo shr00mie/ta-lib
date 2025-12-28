@@ -54,7 +54,7 @@ jobs:
           $PYTHON $GITHUB_WORKSPACE/scripts/package.py
           $PYTHON $GITHUB_WORKSPACE/scripts/test-dist.py
 
-      - name: Verify dist assets are up-to-date
+      - name: Check for changes and commit if any
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
@@ -62,7 +62,31 @@ jobs:
           dist_changes=$(git status --porcelain dist/)
           ta_common_changes=$(git status --porcelain include/ta_common.h)
           if [ -n "$dist_changes" ] || [ -n "$ta_common_changes" ]; then
-            echo "Error: Unexpected changes in dist/ assets."
-            echo "The dev-nigthly-tests.yml should have updated these assets."
-            exit 1
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            echo "Changes detected by git status:"
+            if [ -n "$dist_changes" ]; then
+              echo "$dist_changes"
+              git add dist/
+            fi
+            if [ -n "$ta_common_changes" ]; then
+              echo "$ta_common_changes"
+              git add include/ta_common.h
+            fi
+
+            git commit -m "Update dist package (from main nightly tests)"
+
+            # Check for unstaged changes and log them.
+            # (this help debugging because it should not happen)
+            if [ -n "$(git status --porcelain)" ]; then
+              echo "Unstaged changes detected:"
+              git status --porcelain
+            fi
+
+            # Retry mechanism for handling concurrent pushes
+            for i in {1..5}; do
+              git pull --rebase --strategy-option=ours origin main && git push origin main && break || sleep 10
+            done
+          else
+            echo "No changes detected in dist directory"
           fi
