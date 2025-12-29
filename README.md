@@ -3,6 +3,10 @@
 A custom linux only flavor of ta-lib for stuff...
 
 Changes:
-- removed windows and mac cross-compilation
+- removed cross-compilation for:
+    - windows
+    - mac
+    - java
+    - rust
 - removed candle related functions
 - added jma
