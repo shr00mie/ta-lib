@@ -102,12 +102,12 @@
 #include <ctype.h>
 
 // Comment-out these to reduce processing time (useful for devs)
-#define ENABLE_JAVA
+// #define ENABLE_JAVA  // Removed: Java bindings not needed for C-only compilation
 #define ENABLE_C
-#define ENABLE_RUST
+// #define ENABLE_RUST  // Removed: Rust bindings not needed for C-only compilation
 
 // Comment to genereate all functions.
-#define RUST_SINGLE_FUNC "MULT"
+// #define RUST_SINGLE_FUNC "MULT"  // Removed: Rust not needed
 
 #if !defined(__WIN32__) && !defined(__MSDOS__) && !defined(WIN32)
    #include <unistd.h>
@@ -271,29 +271,27 @@ FileHandle *gOutRetCode_C = NULL;     /* For "ta_retcode.c" */
 FileHandle *gOutRetCode_CSV = NULL;   /* For "ta_retcode.csv" */
 FileHandle *gOutFuncList_TXT = NULL;  /* For "ta_func_list.txt" */
 FileHandle *gOutDefs_H = NULL;        /* For "ta_defs.h" */
-FileHandle *gOutFunc_SWG = NULL;      /* For SWIG */
+// FileHandle *gOutFunc_SWG = NULL;      /* For SWIG - Removed: SWIG bindings not needed for C-only compilation */
 FileHandle *gOutFunc_XML = NULL;      /* For "ta_func_api.xml" */
 FileHandle *gOutFuncAPI_C = NULL;     /* For "ta_func_api.c" */
 FileHandle *gOutMakefile_AM = NULL;   /* For "Makefile.am" */
 
-FileHandle *gOutCore_Java = NULL;       /* For Core.Java */
-FileHandle *gOutJavaDefs_H = NULL;      /* For "java_defs.h" */
-FileHandle *gOutFunc_Annotation = NULL; /* For "CoreAnnotated.java" */
+// FileHandle *gOutCore_Java = NULL;       /* For Core.Java - Removed: Java bindings not needed */
+// FileHandle *gOutJavaDefs_H = NULL;      /* For "java_defs.h" - Removed: Java bindings not needed */
+// FileHandle *gOutFunc_Annotation = NULL; /* For "CoreAnnotated.java" - Removed: Java bindings not needed */
 
 
 static void create_dirs( void );
 static void create_dir_recursively( const char *dir );
 
-static void writeRustMod( void );
-static void genRustCodePhase2( const TA_FuncInfo *funcInfo );
-void rustCargoFix( void );
-void rustCargoFormat( void );
-
-static void genJavaCodePhase1( const TA_FuncInfo *funcInfo );
-static void genJavaCodePhase2( const TA_FuncInfo *funcInfo );
-
-/* To generate CoreAnnotated.java */
-static void printJavaFunctionAnnotation(const TA_FuncInfo *funcInfo);
+// Removed: Rust and Java function declarations - not needed for C-only compilation
+// static void writeRustMod( void );
+// static void genRustCodePhase2( const TA_FuncInfo *funcInfo );
+// void rustCargoFix( void );
+// void rustCargoFormat( void );
+// static void genJavaCodePhase1( const TA_FuncInfo *funcInfo );
+// static void genJavaCodePhase2( const TA_FuncInfo *funcInfo );
+// static void printJavaFunctionAnnotation(const TA_FuncInfo *funcInfo);
 
 
 typedef void (*TA_ForEachGroup)( const char *groupName,
@@ -521,10 +519,11 @@ int main(int argc, char* argv[])
          printf( "     - ta-lib/src/ta_common/ta_retcode.*\n" );
          printf( "     - ta-lib/src/ta_abstract/ta_group_idx.c\n");
          printf( "     - ta-lib/src/ta_abstract/frames/*.*\n");
-         printf( "     - ta-lib/swig/src/interface/ta_func.swg\n" );
-         printf( "     - ta-lib/src/ta_abstract/ta_java_defs.h\n" );
-         printf( "     - ta-lib/java/src/com/tictactec/ta/lib/Core.java\n" );
-         printf( "     - ta-lib/java/src/com/tictactec/ta/lib/CoreAnnotated.java\n" );
+         // Removed: SWIG, Java, Rust references - not needed for C-only compilation
+         // printf( "     - ta-lib/swig/src/interface/ta_func.swg\n" );
+         // printf( "     - ta-lib/src/ta_abstract/ta_java_defs.h\n" );
+         // printf( "     - ta-lib/java/src/com/tictactec/ta/lib/Core.java\n" );
+         // printf( "     - ta-lib/java/src/com/tictactec/ta/lib/CoreAnnotated.java\n" );
          printf( "     - ta-lib/ta_func_api.xml\n" );
          printf( "     - ta-lib/src/ta_abstract/ta_func_api.c\n" );
          printf( "     ... and more ...");
@@ -569,21 +568,8 @@ int main(int argc, char* argv[])
 
    create_dirs();
 
-   // Detect if mcpp is installed.
+   // Removed: mcpp detection for Rust - not needed for C-only compilation
    gmcpp_installed = 0;
-   #if defined(ENABLE_RUST)
-      #if defined(_WIN32)
-        // TODO
-        gmcpp_installed = 1;
-      #else
-        gmcpp_installed = (system("which mcpp >/dev/null 2>&1") == 0);
-        run_command("which mcpp", temp_buffer, sizeof(temp_buffer));
-        if (temp_buffer[0] != '\0') {
-          gmcpp_exec = temp_buffer;
-          printf("mcpp found at %s\n", gmcpp_exec);
-        }
-      #endif
-   #endif
 
    retCode = TA_Initialize();
    if( retCode != TA_SUCCESS )
@@ -602,13 +588,7 @@ int main(int argc, char* argv[])
       printf( "Shutdown failed (%d)\n", retCode );
    }
 
-   #if defined(ENABLE_RUST)
-      if( gmcpp_installed == 0 )
-      {
-         printf( "\nWarning: mcpp is not installed. Rust code generation skipped.\n" );
-         printf("To install do 'sudo apt install mcpp' or 'brew install mcpp'.\n");
-      }
-   #endif
+   // Removed: Rust mcpp warning - not needed for C-only compilation
 
    return retValue;
 }
@@ -835,45 +815,10 @@ static int genCode(int argc, char* argv[])
 
 
 
-   // Verify if javac executeable is installed, if not, just skip the java code generation.
-   #define FILE_CORE_JAVA     ta_fs_path(8, "..", "java", "src", "com", "tictactec", "ta", "lib", "Core.java")
-   #define FILE_CORE_JAVA_TMP ta_fs_path(3, "..", "temp", "CoreJava.tmp")
-   #define FILE_CORE_JAVA_UNF ta_fs_path(3, "..", "temp", "CoreJavaUnformated.tmp")
-
-   int javac_installed = 0;
-   #if defined(ENABLE_JAVA)
-      #if defined(_WIN32)
-         javac_installed = (system("javac -version >nul 2>&1") == 0);
-      #else
-         javac_installed = (system("javac -version >/dev/null 2>&1") == 0);
-      #endif
-
-      if( !javac_installed) {
-         printf("warning: 'javac' not installed. Skipping Java code update\n");
-         gOutCore_Java = NULL;
-      } else {
-         /* Create Java template for Core.java */
-         gOutCore_Java = fileOpen( FILE_CORE_JAVA, NULL, FILE_READ );
-         if( gOutCore_Java == NULL )
-         {
-               printf( "\nCannot access [%s]\n", gToOpen );
-               return -1;
-         }
-         tempFile = fileOpen( FILE_CORE_JAVA_TMP, NULL, FILE_WRITE|WRITE_ALWAYS );
-         if( tempFile == NULL )
-         {
-               printf( "Cannot create temporary Core.java project file!\n" );
-               return -1;
-         }
-         if( createTemplate( gOutCore_Java, tempFile ) != 0 )
-         {
-               printf( "Failed to parse and write the temporary Core.java project file!\n" );
-               return -1;
-         }
-         fileClose(gOutCore_Java);
-         fileClose(tempFile);
-      }
-   #endif
+   // Removed: Java code generation - not needed for C-only compilation
+   // #define FILE_CORE_JAVA     ta_fs_path(8, "..", "java", "src", "com", "tictactec", "ta", "lib", "Core.java")
+   // #define FILE_CORE_JAVA_TMP ta_fs_path(3, "..", "temp", "CoreJava.tmp")
+   // #define FILE_CORE_JAVA_UNF ta_fs_path(3, "..", "temp", "CoreJavaUnformated.tmp")
 
 
    #if defined(ENABLE_C)
@@ -901,16 +846,15 @@ static int genCode(int argc, char* argv[])
          printf( "\nCannot access ta_func_api.xml" );
       }
 
-      /* Create "ta_func.swg" */
-      gOutFunc_SWG = fileOpen( ta_fs_path(5, "..", "swig", "src", "interface", "ta_func.swg"),
-                              ta_fs_path(5, "..", "src", "ta_abstract", "templates", "ta_func.swg.template"),
-                           FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-
-      if( gOutFunc_SWG == NULL )
-      {
-         printf( "\nCannot access [%s]\n", gToOpen );
-         return -1;
-      }
+      /* Create "ta_func.swg" - Removed: SWIG bindings not needed for C-only compilation */
+      // gOutFunc_SWG = fileOpen( ta_fs_path(5, "..", "swig", "src", "interface", "ta_func.swg"),
+      //                         ta_fs_path(5, "..", "src", "ta_abstract", "templates", "ta_func.swg.template"),
+      //                      FILE_WRITE|WRITE_ON_CHANGE_ONLY );
+      // if( gOutFunc_SWG == NULL )
+      // {
+      //    printf( "\nCannot access [%s]\n", gToOpen );
+      //    return -1;
+      // }
    #endif
 
    #if defined(ENABLE_C)
@@ -962,49 +906,11 @@ static int genCode(int argc, char* argv[])
       }
    #endif
 
-   #if defined(ENABLE_JAVA)
-      if (!gOutCore_Java) {
-         gOutJavaDefs_H = NULL;
-      } else {
-         /* Create "java_defs.h" */
-         gOutJavaDefs_H = fileOpen( ta_fs_path(4, "..", "src", "ta_abstract", "ta_java_defs.h"),
-                                 ta_fs_path(5, "..", "src", "ta_abstract", "templates", "ta_java_defs.h.template"),
-                                 FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-
-
-         if( gOutJavaDefs_H == NULL )
-         {
-            printf( "\nCannot access [%s]\n", gToOpen );
-            return -1;
-         }
-      }
-   #endif
+   // Removed: Java defs.h generation - not needed for C-only compilation
 
 
 
-   #if defined(ENABLE_JAVA)
-      if (gOutCore_Java == NULL) {
-         gOutFunc_Annotation = NULL;
-      } else {
-         /* Create "CoreAnnotated.java" */
-         gOutFunc_Annotation = fileOpen( ta_fs_path(8, "..", "java", "src", "com", "tictactec", "ta", "lib", "CoreAnnotated.java"),
-                                          ta_fs_path(5, "..", "src", "ta_abstract", "templates", "CoreAnnotated.java.template"),
-                                          FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-
-         if(gOutFunc_Annotation == NULL)
-         {
-            printf( "\nCannot access CoreAnnotated.java" );
-         }
-
-         /* Re-open the Core.java template. */
-         gOutCore_Java = fileOpen( FILE_CORE_JAVA_UNF, FILE_CORE_JAVA_TMP, FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-         if( gOutCore_Java == NULL )
-         {
-            printf( "Cannot update [%s]\n", FILE_CORE_JAVA_UNF );
-            return -1;
-         }
-      }
-   #endif
+   // Removed: CoreAnnotated.java generation - not needed for C-only compilation
 
 
    /* Process each functions. Two phase. */
@@ -1017,7 +923,7 @@ static int genCode(int argc, char* argv[])
 
       /* Append some "hard coded" prototype for ta_func */
       appendToFunc( gOutFunc_H->file );
-      if (gOutFunc_SWG) appendToFunc( gOutFunc_SWG->file );
+      // if (gOutFunc_SWG) appendToFunc( gOutFunc_SWG->file );  // Removed: SWIG not needed
 
       /* Seperate generation of xml description file */
       fprintf(gOutFunc_XML->file, "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n");
@@ -1026,22 +932,23 @@ static int genCode(int argc, char* argv[])
       fprintf(gOutFunc_XML->file, "</FinancialFunctions>\n");
    #endif
 
-   #if defined(ENABLE_RUST)
-      writeRustMod();
-   #endif
+   // Removed: Rust mod generation - not needed for C-only compilation
+   // #if defined(ENABLE_RUST)
+   //    writeRustMod();
+   // #endif
 
    /* Close all files who were updated with the list of TA functions. */
    fileClose( gOutFuncList_TXT );
    fileClose( gOutFunc_H );
-   fileClose( gOutFunc_SWG );
+   // fileClose( gOutFunc_SWG );  // Removed: SWIG not needed
    fileClose( gOutFrame_H );
    fileClose( gOutFrame_C );
    fileClose( gOutFunc_XML );
    fileClose( gOutMakefile_AM );
-   fileClose( gOutCore_Java );
-   fileClose( gOutJavaDefs_H );
-   fileClose( gOutFunc_Annotation );
-   fileDelete( FILE_CORE_JAVA_TMP );
+   // fileClose( gOutCore_Java );  // Removed: Java not needed
+   // fileClose( gOutJavaDefs_H );  // Removed: Java not needed
+   // fileClose( gOutFunc_Annotation );  // Removed: Java not needed
+   // fileDelete( FILE_CORE_JAVA_TMP );  // Removed: Java not needed
 
 
    if( retCode != TA_SUCCESS )
@@ -1096,62 +1003,7 @@ static int genCode(int argc, char* argv[])
       }
    #endif
 
-   #if defined(ENABLE_JAVA)
-      /* Run Java Post-Processing.
-      * On Success, the Java program create a file named "java_success".
-      */
-      if (gOutCore_Java) {
-         printf( "\nPost-Processing Java Code\n" );
-         # define JAVA_SUCCESS_FILE     ta_fs_path(3, "..", "temp", "java_success")
-         #define JAVA_PRETTY_TEMP_FILE ta_fs_path(3, "..", "temp", "CoreJavaPretty.tmp")
-         fileDelete( JAVA_SUCCESS_FILE );
-
-   #ifdef _MSC_VER
-         ret = system( "javac -cp . -d . \".." PATH_SEPARATOR "src" PATH_SEPARATOR "tools" PATH_SEPARATOR "gen_code" PATH_SEPARATOR "java" PATH_SEPARATOR "PrettyCode.java" );
-         ret = system( "javac -cp . -d . \".." PATH_SEPARATOR "src" PATH_SEPARATOR "tools" PATH_SEPARATOR "gen_code" PATH_SEPARATOR "java" PATH_SEPARATOR "Main.java" );
-   #else
-         ret = system( "javac -cp . -d . .." PATH_SEPARATOR "src" PATH_SEPARATOR "tools" PATH_SEPARATOR "gen_code" PATH_SEPARATOR "java" PATH_SEPARATOR "PrettyCode.java" );
-         ret = system( "javac -cp . -d . .." PATH_SEPARATOR "src" PATH_SEPARATOR "tools" PATH_SEPARATOR "gen_code" PATH_SEPARATOR "java" PATH_SEPARATOR "Main.java" );
-   #endif
-         ret = system( "java -cp . Main" );
-         tempFile = fileOpen(JAVA_SUCCESS_FILE,NULL,FILE_READ );
-         fileDelete( FILE_CORE_JAVA_UNF );
-
-         if( tempFile == NULL )
-         {
-            printf( "\nWarning: Java code NOT updated.\n" );
-         }
-         else
-         {
-
-            fileClose( tempFile );
-
-            /* Java processing done. Overwrite the original Core.java ONLY if there
-            * is changes (re-use fileOpen/fileClose even if not efficient).
-            */
-            tempFile = fileOpen( JAVA_PRETTY_TEMP_FILE, NULL, FILE_READ );
-            tempFileOut = fileOpen( FILE_CORE_JAVA, NULL,
-                                    FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-
-            if( (tempFile == NULL) || (tempFileOut == NULL) )
-            {
-               printf( "\nError: Java code update failed.\n" );
-               return -1;
-            }
-            else
-            {
-
-               while( fgets( gTempBuf, BUFFER_SIZE, tempFile->file ) )
-                  fputs(gTempBuf,tempFileOut->file);
-
-               fileClose(tempFile);
-               fileClose(tempFileOut);
-            }
-         }
-         fileDelete( JAVA_SUCCESS_FILE );
-         fileDelete( JAVA_PRETTY_TEMP_FILE );
-      }
-   #endif
+   // Removed: Java post-processing - not needed for C-only compilation
 
    /* Remove temporary files. */
 
@@ -1572,11 +1424,12 @@ static void doForEachFunctionPhase1( const TA_FuncInfo *funcInfo,
 {
 	(void)opaqueData;
 
-   #if defined(ENABLE_JAVA)
-     if (gOutCore_Java) {
-       genJavaCodePhase1( funcInfo );
-     }
-   #endif
+   // Removed: Java code generation - not needed for C-only compilation
+   // #if defined(ENABLE_JAVA)
+   //   if (gOutCore_Java) {
+   //     genJavaCodePhase1( funcInfo );
+   //   }
+   // #endif
 }
 
 static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
@@ -1596,21 +1449,22 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
 
    #if defined(ENABLE_C)
       fprintf( gOutFunc_H->file, "\n" );
-      if( gOutFunc_SWG ) fprintf( gOutFunc_SWG->file, "\n" );
+      // if( gOutFunc_SWG ) fprintf( gOutFunc_SWG->file, "\n" );  // Removed: SWIG not needed
 
       fprintf( gOutFunc_H->file, "/*\n" );
       printFuncHeaderDoc( gOutFunc_H->file, funcInfo, " * " );
       fprintf( gOutFunc_H->file, " */\n" );
 
-      if( gOutFunc_SWG ) {
-         fprintf( gOutFunc_SWG->file, "/*\n" );
-         printFuncHeaderDoc( gOutFunc_SWG->file, funcInfo, " * " );
-         fprintf( gOutFunc_SWG->file, " */\n" );
-      }
+      // Removed: SWIG header doc generation - not needed
+      // if( gOutFunc_SWG ) {
+      //    fprintf( gOutFunc_SWG->file, "/*\n" );
+      //    printFuncHeaderDoc( gOutFunc_SWG->file, funcInfo, " * " );
+      //    fprintf( gOutFunc_SWG->file, " */\n" );
+      // }
 
       /* Generate the defines corresponding to this function. */
       printDefines( gOutFunc_H->file, funcInfo );
-      if (gOutFunc_SWG) printDefines( gOutFunc_SWG->file, funcInfo );
+      // if (gOutFunc_SWG) printDefines( gOutFunc_SWG->file, funcInfo );  // Removed: SWIG not needed
 
       /* Generate the function prototype. */
       printFunc( gOutFunc_H->file, "TA_LIB_API ", funcInfo, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -1619,17 +1473,17 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
       printFunc( gOutFunc_H->file, "TA_LIB_API ", funcInfo, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);
       fprintf( gOutFunc_H->file, "\n" );
 
-      /* Generate the SWIG interface. */
-      if (gOutFunc_SWG) {
-         printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
-         fprintf( gOutFunc_SWG->file, "\n" );
-      }
+      /* Removed: SWIG interface generation - not needed for C-only compilation */
+      // if (gOutFunc_SWG) {
+      //    printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
+      //    fprintf( gOutFunc_SWG->file, "\n" );
+      // }
 
       /* Generate the corresponding lookback function prototype. */
       printFunc( gOutFunc_H->file, "TA_LIB_API ", funcInfo, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-      if (gOutFunc_SWG) {
-         printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-      }
+      // if (gOutFunc_SWG) {  // Removed: SWIG not needed
+      //    printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+      // }
 
       /* Create the frame definition (ta_frame.c) and declaration (ta_frame.h) */
       genPrefix = 1;
@@ -1647,21 +1501,20 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
    #endif
 
 
-   #if defined(ENABLE_JAVA)
-      /* Generate CoreAnnotated */
-      printJavaFunctionAnnotation( funcInfo );
-   #endif
+   // Removed: Java annotation generation - not needed for C-only compilation
+   // #if defined(ENABLE_JAVA)
+   //    printJavaFunctionAnnotation( funcInfo );
+   // #endif
 
    doFuncFile( funcInfo );
 
-   #if defined(ENABLE_JAVA)
-     /* Run the func file through the pre-processor to generate the Java code. */
-     genJavaCodePhase2( funcInfo );
-   #endif
-
-   #if defined(ENABLE_RUST)
-     genRustCodePhase2( funcInfo );
-   #endif
+   // Removed: Java and Rust code generation - not needed for C-only compilation
+   // #if defined(ENABLE_JAVA)
+   //   genJavaCodePhase2( funcInfo );
+   // #endif
+   // #if defined(ENABLE_RUST)
+   //   genRustCodePhase2( funcInfo );
+   // #endif
 
 
    firstTime = 0;
@@ -4583,4 +4436,4 @@ struct WriteRustModLinesParams {
 };
 
 
-#include "gen_rust.c"
+// #include "gen_rust.c"  // Removed: Rust bindings not needed for C-only compilation
