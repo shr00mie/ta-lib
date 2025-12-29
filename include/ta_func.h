@@ -1501,6 +1501,54 @@ TA_LIB_API int TA_IMI_Lookback( int           optInTimePeriod );  /* From 2 to 1
 
 
 /*
+ * TA_JMA - Jurik Moving Average
+ * 
+ * Input  = double
+ * Output = double, double, double
+ * 
+ * Optional Parameters
+ * -------------------
+ * optInTimePeriod:(From 1 to 100000)
+ *    Number of period
+ * 
+ * optInPhase:(From -100 to 100)
+ *    Phase
+ * 
+ * optInVolPeriods:(From 1 to 100000)
+ *    Period for average volatility calculation
+ * 
+ * 
+ */
+TA_LIB_API TA_RetCode TA_JMA( int    startIdx,
+                              int    endIdx,
+                                         const double inReal[],
+                                         int           optInTimePeriod, /* From 1 to 100000 */
+                                         int           optInPhase, /* From -100 to 100 */
+                                         int           optInVolPeriods, /* From 1 to 100000 */
+                                         int          *outBegIdx,
+                                         int          *outNBElement,
+                                         double        outRealJMA[],
+                                         double        outRealUpperBand[],
+                                         double        outRealLowerBand[] );
+
+TA_LIB_API TA_RetCode TA_S_JMA( int    startIdx,
+                                int    endIdx,
+                                           const float  inReal[],
+                                           int           optInTimePeriod, /* From 1 to 100000 */
+                                           int           optInPhase, /* From -100 to 100 */
+                                           int           optInVolPeriods, /* From 1 to 100000 */
+                                           int          *outBegIdx,
+                                           int          *outNBElement,
+                                           double        outRealJMA[],
+                                           double        outRealUpperBand[],
+                                           double        outRealLowerBand[] );
+
+TA_LIB_API int TA_JMA_Lookback( int           optInTimePeriod,
+                                int           optInPhase,
+                                int           optInVolPeriods );  /* From 1 to 100000 */
+
+
+/*
  * TA_KAMA - Kaufman Adaptive Moving Average
  * 
  * Input  = double

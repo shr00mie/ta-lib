@@ -193,7 +193,7 @@ Supported via CMake (standard Unix build process). No special configuration requ
 Code generation tool that creates:
 - Function prototypes in `include/ta_func.h`
 - Implementation boilerplate
-- Language bindings (SWIG, Java, Rust)
+- Language bindings
 - XML function descriptions
 
 **Build**: Enabled by default (`BUILD_DEV_TOOLS=ON`)

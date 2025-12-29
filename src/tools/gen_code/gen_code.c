@@ -54,21 +54,16 @@
  *  101303 MF    Remove underscore from names.
  *  020804 MF,ST Fixes to make it work on Linux (Bug#873879).
  *  022904 MF    Add TA_GetLookback
- *  030604 MF    Add generation of "ta_func.swg"
  *  082004 AC    Add generation of candlestick functions declaration
  *  010405 RM    Change createProjTemplate to work with VS03 and VS05
  *  031805 MF    Add generation of MSVC project file.
  *  061805 MF    Changes related to .NET verifiable code.
  *  062505 MF    Fix 'out' attribute for .NET verifiable code.
- *  121705 MF    Complete Java port.
- *  012806 MF    Add call to Java post-processing.
  *  093006 MF    Add code generation for TA_FunctionDescription
  *  110206 AC    Change volume and open interest to double
- *  120106 MF    Add generation of java_defs.h
  *  122406 MF    Add generation of Makefile.am
  *  011707 CM    Add ta_pragma.h handles VC8 warnings, type conversion of strlen handles VC warning
  *  021807 MF    Add generation of VS2005 project file
- *  040107 MF,RG Add generation of CoreAnnotated.java
  *  091307 MF    Add generation of Intel C++ compiler project file (TA-Lib Pro only)
  *  052508 MF    Add generation of VS2008 project file
  *  061608 MF    Add code to preserve proprietary code marker for TA-Lib pro.
@@ -102,12 +97,7 @@
 #include <ctype.h>
 
 // Comment-out these to reduce processing time (useful for devs)
-// #define ENABLE_JAVA  // Removed: Java bindings not needed for C-only compilation
 #define ENABLE_C
-// #define ENABLE_RUST  // Removed: Rust bindings not needed for C-only compilation
-
-// Comment to genereate all functions.
-// #define RUST_SINGLE_FUNC "MULT"  // Removed: Rust not needed
 
 #if !defined(__WIN32__) && !defined(__MSDOS__) && !defined(WIN32)
    #include <unistd.h>
@@ -276,22 +266,11 @@ FileHandle *gOutFunc_XML = NULL;      /* For "ta_func_api.xml" */
 FileHandle *gOutFuncAPI_C = NULL;     /* For "ta_func_api.c" */
 FileHandle *gOutMakefile_AM = NULL;   /* For "Makefile.am" */
 
-// FileHandle *gOutCore_Java = NULL;       /* For Core.Java - Removed: Java bindings not needed */
-// FileHandle *gOutJavaDefs_H = NULL;      /* For "java_defs.h" - Removed: Java bindings not needed */
-// FileHandle *gOutFunc_Annotation = NULL; /* For "CoreAnnotated.java" - Removed: Java bindings not needed */
 
 
 static void create_dirs( void );
 static void create_dir_recursively( const char *dir );
 
-// Removed: Rust and Java function declarations - not needed for C-only compilation
-// static void writeRustMod( void );
-// static void genRustCodePhase2( const TA_FuncInfo *funcInfo );
-// void rustCargoFix( void );
-// void rustCargoFormat( void );
-// static void genJavaCodePhase1( const TA_FuncInfo *funcInfo );
-// static void genJavaCodePhase2( const TA_FuncInfo *funcInfo );
-// static void printJavaFunctionAnnotation(const TA_FuncInfo *funcInfo);
 
 
 typedef void (*TA_ForEachGroup)( const char *groupName,
@@ -327,15 +306,6 @@ typedef struct {
 	const TA_FuncInfo *funcInfo;
 } PrintFuncParamStruct;
 
-static void printRustLookbackFunctionSignature(FILE *out,
-                      const char *prefix, /* Can be NULL */
-                      const TA_FuncInfo *funcInfo);
-static void printRustDoublePrecisionFunctionSignature(FILE *out,
-                      const char *prefix, /* Can be NULL */
-                      const TA_FuncInfo *funcInfo);
-static void printRustSinglePrecisionFunctionSignature(FILE *out,
-                      const char *prefix, /* Can be NULL */
-                      const TA_FuncInfo *funcInfo);
 
 static void printFunc(FILE *out,
                       const char *prefix, /* Can be NULL */
@@ -846,15 +816,6 @@ static int genCode(int argc, char* argv[])
          printf( "\nCannot access ta_func_api.xml" );
       }
 
-      /* Create "ta_func.swg" - Removed: SWIG bindings not needed for C-only compilation */
-      // gOutFunc_SWG = fileOpen( ta_fs_path(5, "..", "swig", "src", "interface", "ta_func.swg"),
-      //                         ta_fs_path(5, "..", "src", "ta_abstract", "templates", "ta_func.swg.template"),
-      //                      FILE_WRITE|WRITE_ON_CHANGE_ONLY );
-      // if( gOutFunc_SWG == NULL )
-      // {
-      //    printf( "\nCannot access [%s]\n", gToOpen );
-      //    return -1;
-      // }
    #endif
 
    #if defined(ENABLE_C)
@@ -906,11 +867,6 @@ static int genCode(int argc, char* argv[])
       }
    #endif
 
-   // Removed: Java defs.h generation - not needed for C-only compilation
-
-
-
-   // Removed: CoreAnnotated.java generation - not needed for C-only compilation
 
 
    /* Process each functions. Two phase. */
@@ -923,7 +879,6 @@ static int genCode(int argc, char* argv[])
 
       /* Append some "hard coded" prototype for ta_func */
       appendToFunc( gOutFunc_H->file );
-      // if (gOutFunc_SWG) appendToFunc( gOutFunc_SWG->file );  // Removed: SWIG not needed
 
       /* Seperate generation of xml description file */
       fprintf(gOutFunc_XML->file, "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n");
@@ -940,15 +895,10 @@ static int genCode(int argc, char* argv[])
    /* Close all files who were updated with the list of TA functions. */
    fileClose( gOutFuncList_TXT );
    fileClose( gOutFunc_H );
-   // fileClose( gOutFunc_SWG );  // Removed: SWIG not needed
    fileClose( gOutFrame_H );
    fileClose( gOutFrame_C );
    fileClose( gOutFunc_XML );
    fileClose( gOutMakefile_AM );
-   // fileClose( gOutCore_Java );  // Removed: Java not needed
-   // fileClose( gOutJavaDefs_H );  // Removed: Java not needed
-   // fileClose( gOutFunc_Annotation );  // Removed: Java not needed
-   // fileDelete( FILE_CORE_JAVA_TMP );  // Removed: Java not needed
 
 
    if( retCode != TA_SUCCESS )
@@ -1473,17 +1423,9 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
       printFunc( gOutFunc_H->file, "TA_LIB_API ", funcInfo, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);
       fprintf( gOutFunc_H->file, "\n" );
 
-      /* Removed: SWIG interface generation - not needed for C-only compilation */
-      // if (gOutFunc_SWG) {
-      //    printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0);
-      //    fprintf( gOutFunc_SWG->file, "\n" );
-      // }
 
       /* Generate the corresponding lookback function prototype. */
       printFunc( gOutFunc_H->file, "TA_LIB_API ", funcInfo, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-      // if (gOutFunc_SWG) {  // Removed: SWIG not needed
-      //    printFunc( gOutFunc_SWG->file, NULL, funcInfo, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-      // }
 
       /* Create the frame definition (ta_frame.c) and declaration (ta_frame.h) */
       genPrefix = 1;
@@ -1501,20 +1443,9 @@ static void doForEachFunctionPhase2( const TA_FuncInfo *funcInfo,
    #endif
 
 
-   // Removed: Java annotation generation - not needed for C-only compilation
-   // #if defined(ENABLE_JAVA)
-   //    printJavaFunctionAnnotation( funcInfo );
-   // #endif
 
    doFuncFile( funcInfo );
 
-   // Removed: Java and Rust code generation - not needed for C-only compilation
-   // #if defined(ENABLE_JAVA)
-   //   genJavaCodePhase2( funcInfo );
-   // #endif
-   // #if defined(ENABLE_RUST)
-   //   genRustCodePhase2( funcInfo );
-   // #endif
 
 
    firstTime = 0;
@@ -1728,44 +1659,6 @@ static void printFunc(FILE *out,
       outBegIdxString       = "outBegIdx";
       funcName              = funcInfo->camelCaseName;
    }
-   else if( outputForSWIG )
-   {
-      if( inputIsSinglePrecision )
-         inputDoubleArrayType  = "const float  *";
-      else
-         inputDoubleArrayType  = "const double *";
-      inputIntArrayType     = "const int    *";
-      outputIntArrayType    = "int";
-      outputDoubleArrayType = "double";
-      outputIntParam        = "int";
-      arrayBracket          = "";
-      startIdxString        = "       START_IDX";
-      endIdxString          = "       END_IDX";
-      outNbElementString    = "OUT_SIZE";
-      outBegIdxString       = "BEG_IDX";
-      funcName              = funcInfo->name;
-   }
-   else if( outputForJava )
-   {
-      if( inputIsSinglePrecision )
-         inputDoubleArrayType  = "float";
-      else
-         inputDoubleArrayType  = "double";
-      inputIntArrayType     = "int";
-      outputDoubleArrayType = "double";
-      outputIntArrayType    = "int";
-      outputIntParam        = "MInteger";
-      arrayBracket          = "[]";
-      startIdxString        = "startIdx";
-      endIdxString          = "endIdx";
-      outNbElementString    = "outNBElement";
-      outBegIdxString       = "outBegIdx";
-      funcName              = funcNameBuffer;
-
-      /* For Java, first letter is always lowercase. */
-      strcpy( funcNameBuffer, funcInfo->camelCaseName );
-      funcNameBuffer[0] = tolower(funcNameBuffer[0]);
-   }
    else
    {
       if( inputIsSinglePrecision )
@@ -1799,12 +1692,6 @@ static void printFunc(FILE *out,
                      managedCPPDeclaration? "":"Core::",
                      funcName );
          }
-         else if( outputForJava )
-         {
-            sprintf( gTempBuf, "%spublic int %sLookback( ",
-                     prefix? prefix:"",
-                     funcName );
-         }
          else
          {
             sprintf( gTempBuf, "%sint TA_%s_Lookback( ",
@@ -1830,13 +1717,6 @@ static void printFunc(FILE *out,
                      funcName,
                      startIdxString );
          }
-         else if( outputForJava )
-         {
-               sprintf( gTempBuf, "%spublic RetCode %s( int    %s,\n",
-                        prefix? prefix:"",
-                        funcName,
-                        startIdxString );
-         }
          else
          {
             if( inputIsSinglePrecision )
@@ -1853,10 +1733,7 @@ static void printFunc(FILE *out,
          print( out, gTempBuf );
          indent = (unsigned int)strlen(gTempBuf);
 
-         if( outputForSWIG )
-            indent -= 25;
-         else
-            indent -= 17;
+         indent -= 17;
 
 		 if( indent < 0 ) indent = 0;
 
@@ -2024,8 +1901,8 @@ static void printFunc(FILE *out,
                   fprintf( out, "%-*s%s%s%s",
                          prototype? 12 : 0,
                          prototype? inputDoubleArrayType : "",
-                         outputForSWIG?"":" ",
-                         outputForSWIG? "IN_ARRAY /* inOpen */": "inOpen",
+                         " ",
+                         "inOpen",
                          prototype? arrayBracket : "" );
 				  }
                   fprintf( out, "%s\n", frame? " */":"," );
@@ -2045,8 +1922,8 @@ static void printFunc(FILE *out,
                      fprintf( out, "%-*s%s%s%s",
                          prototype? 12 : 0,
                          prototype? inputDoubleArrayType : "",
-                         outputForSWIG?"":" ",
-                         outputForSWIG? "IN_ARRAY /* inHigh */":"inHigh",
+                         " ",
+                         "inHigh",
                          prototype? arrayBracket : "" );
 				  }
                   fprintf( out, "%s\n", frame? " */":"," );
@@ -2088,8 +1965,8 @@ static void printFunc(FILE *out,
 					  fprintf( out, "%-*s%s%s%s",
                          prototype? 12 : 0,
                          prototype? inputDoubleArrayType : "",
-                         outputForSWIG?"":" ",
-                         outputForSWIG? "IN_ARRAY /* inClose */": "inClose",
+                         " ",
+                         "inClose",
                          prototype? arrayBracket : "" );
 				  }
 
@@ -2110,8 +1987,8 @@ static void printFunc(FILE *out,
 					  fprintf( out, "%-*s%s%s%s",
                          prototype? 12 : 0,
                          prototype? inputDoubleArrayType : "",
-                         outputForSWIG?"":" ",
-                         outputForSWIG? "IN_ARRAY /* inVolume */": "inVolume",
+                         " ",
+                         "inVolume",
                          prototype? arrayBracket : "" );
 				  }
 
@@ -2132,8 +2009,8 @@ static void printFunc(FILE *out,
 					  fprintf( out, "%-*s%s%s%s",
                          prototype? 12 : 0,
                          prototype? inputDoubleArrayType : "",
-                         outputForSWIG?"":" ",
-                         outputForSWIG? "IN_ARRAY /* inOpenInterest */": "inOpenInterest",
+                         " ",
+                         "inOpenInterest",
                          prototype? arrayBracket : "" );
 				  }
 
@@ -2147,7 +2024,7 @@ static void printFunc(FILE *out,
             break;
          case TA_Input_Integer:
             typeString = inputIntArrayType;
-            defaultParamName = outputForSWIG? "IN_ARRAY":"inInteger";
+            defaultParamName = "inInteger";
             break;
          default:
             if( !paramName )
@@ -2168,14 +2045,6 @@ static void printFunc(FILE *out,
 
                if( frame )
                   fprintf( out, "params->in[%d].data.%s, /*", paramNb, defaultParamName );
-               if( outputForSWIG )
-                  fprintf( out, "%-*s%s%s /* %s */",
-                           prototype? 12 : 0,
-                           prototype? typeString : "",
-                           defaultParamName,
-                           prototype? arrayBracket : "",
-                           inputParamInfo->paramName );
-               else
 			   {
 				   if( arrayToSubArrayCnvt )
 				   {
@@ -2238,7 +2107,7 @@ static void printFunc(FILE *out,
       case TA_OptInput_RealRange:
       case TA_OptInput_RealList:
          typeString = "double";
-         defaultParamName = outputForSWIG? "OPT_REAL":"optInReal";
+         defaultParamName = "optInReal";
          break;
       case TA_OptInput_IntegerRange:
          typeString = "int";
@@ -2248,8 +2117,8 @@ static void printFunc(FILE *out,
          if( isMAType && !frame )
          {
 
-            typeString = managedCPPCode||outputForJava? "MAType":"TA_MAType";
-            defaultParamName = outputForSWIG? "OPT_MATYPE":"optInMAType";
+            typeString = managedCPPCode? "MAType":"TA_MAType";
+            defaultParamName = "optInMAType";
             excludeFromManaged = 1;
          }
          else
@@ -2301,16 +2170,10 @@ static void printFunc(FILE *out,
                      paramNb, defaultParamName,
                      lookbackSignature&&lastParam?"":"," );
          }
-         if( outputForSWIG )
-            fprintf( out, "%-*s %s /* %s */",
-                     prototype? 13 : 0,
-                     prototype? typeString : "",
-                     defaultParamName, paramName );
-         else
-            fprintf( out, "%-*s %s",
-                     prototype? 13 : 0,
-                     prototype? typeString : "",
-                     paramName );
+         fprintf( out, "%-*s %s",
+                  prototype? 13 : 0,
+                  prototype? typeString : "",
+                  paramName );
 
          if( frame )
          {
@@ -2382,7 +2245,7 @@ static void printFunc(FILE *out,
 
    if( lookbackSignature && (funcInfo->nbOptInput == 0) )
    {
-      if( frame || outputForJava )
+      if( frame )
          fprintf( out, " )%s\n", semiColonNeeded? ";":"" );
       else
          fprintf( out, "void )%s\n", semiColonNeeded? ";":"" );
@@ -2408,7 +2271,7 @@ static void printFunc(FILE *out,
                fprintf( out, "%-*s %s%s",
                       prototype? 12 : 0,
                       prototype? outputIntParam : "",
-                      prototype&&!managedCPPCode&&!outputForJava? "*" : "",
+                      prototype&&!managedCPPCode? "*" : "",
                       outBegIdxString );
 
             fprintf( out, "%s\n", frame? "":"," );
@@ -2420,7 +2283,7 @@ static void printFunc(FILE *out,
                fprintf( out, "%-*s %s%s",
                       prototype? 12 : 0,
                       prototype? outputIntParam : "",
-                      prototype&&!managedCPPCode&&!outputForJava? "*" : "",
+                      prototype&&!managedCPPCode? "*" : "",
                       outNbElementString );
             fprintf( out, "%s\n", frame? "":"," );
       }
@@ -2455,7 +2318,7 @@ static void printFunc(FILE *out,
             break;
          case TA_Output_Integer:
             typeString = outputIntArrayType;;
-            defaultParamName = outputForSWIG? "OUT_ARRAY":"outInteger";
+            defaultParamName = "outInteger";
             break;
          default:
             if( !paramName )
@@ -2483,14 +2346,7 @@ static void printFunc(FILE *out,
                       paramNb, defaultParamName,
                       lastParam? "":"," );
 
-            if( outputForSWIG )
-               fprintf( out, "%-*s *%s%s /* %s */",
-                        prototype? 12 : 0,
-                        prototype? typeString : "",
-                        defaultParamName,
-                        prototype? arrayBracket : "",
-                        paramName );
-            else if( arrayToSubArrayCnvt )
+            if( arrayToSubArrayCnvt )
 			{
                fprintf( out, "                gcnew SubArrayFrom1D<%s>(%s,0)", typeString, paramName );
 			}
@@ -2770,7 +2626,8 @@ static void doFuncFile( const TA_FuncInfo *funcInfo )
    print( gOutFunc_C->file, "#elif defined( _JAVA )\n" );
    printFunc( gOutFunc_C->file, NULL, funcInfo, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0);
    print( gOutFunc_C->file, "#elif defined( _RUST )\n" );
-   printRustSinglePrecisionFunctionSignature(gOutFunc_C->file, NULL, funcInfo);
+   // Removed: Rust code generation - not needed for C-only compilation
+   // printRustSinglePrecisionFunctionSignature(gOutFunc_C->file, NULL, funcInfo);
    print( gOutFunc_C->file, "#else\n" );
    printFunc( gOutFunc_C->file, NULL, funcInfo, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);
    print( gOutFunc_C->file, "#endif\n" );
@@ -2949,10 +2806,6 @@ static void writeFuncFile( const TA_FuncInfo *funcInfo )
    print( out, "\n" );
    print( out, "#if defined( _MANAGED )\n" );
    printFunc( out, NULL, funcInfo, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
-   print( out, "#elif defined( _JAVA )\n" );
-   printFunc( out, NULL, funcInfo, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0);
-   print( out, "#elif defined( _RUST )\n" );
-   printRustLookbackFunctionSignature(out, NULL, funcInfo);
    print( out, "#else\n" );
    printFunc( out, "TA_LIB_API ", funcInfo, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
    print( out, "#endif\n" );
@@ -2981,18 +2834,6 @@ static void writeFuncFile( const TA_FuncInfo *funcInfo )
    printFunc( out, NULL, funcInfo, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0);
    print( out, "#elif defined( _MANAGED )\n" );
    printFunc( out, NULL, funcInfo, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
-   print( out, "#elif defined( _JAVA )\n" );
-
-   /* Handle special case to avoid duplicate definition of min,max */
-   if( strcmp( funcInfo->camelCaseName, "Min" ) == 0 ) {
-      print( out, "#undef min\n" );
-   } else if( strcmp( funcInfo->camelCaseName, "Max" ) == 0 ) {
-      print( out, "#undef max\n" );
-   }
-
-   printFunc( out, NULL, funcInfo, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0);
-   print( out, "#elif defined( _RUST )\n" );
-   printRustDoublePrecisionFunctionSignature(out, NULL, funcInfo);
    print( out, "#else\n" );
    printFunc( out, "TA_LIB_API ", funcInfo, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
    print( out, "#endif\n" );
@@ -3005,30 +2846,18 @@ static void writeFuncFile( const TA_FuncInfo *funcInfo )
    print( out, "#ifndef TA_FUNC_NO_RANGE_CHECK\n" );
    print( out, "\n" );
    print( out, "   /* Validate the requested output range. */\n" );
-   print( out, "#if defined( _RUST )\n" );
-   print( out, "   /* Skip negative checks for Rust since startIdx/endIdx are usize (unsigned) */\n" );
-   print( out, "   if( endIdx < startIdx ) {\n" );
-   print( out, "      return ENUM_VALUE(RetCode,TA_OUT_OF_RANGE_END_INDEX,OutOfRangeEndIndex);\n" );
-   print( out, "   }\n");
-   print( out, "#else\n" );
    print( out, "   if( startIdx < 0 ) {\n" );
    print( out, "      return ENUM_VALUE(RetCode,TA_OUT_OF_RANGE_START_INDEX,OutOfRangeStartIndex);\n" );
    print( out, "   }\n");
    print( out, "   if( (endIdx < 0) || (endIdx < startIdx)) {\n" );
    print( out, "      return ENUM_VALUE(RetCode,TA_OUT_OF_RANGE_END_INDEX,OutOfRangeEndIndex);\n" );
    print( out, "   }\n");
-   print( out, "#endif\n");
    print( out, "\n" );
    /* Generate the code for checking the parameters.
     * Also generates the code for setting up the
     * default values.
     */
-   print( out, "#if defined( _RUST )\n" );
-   // printRustRangeCheckValidationCode();
-   print( out, "\n" );
-   print( out, "#else\n" );
    printFunc( out, NULL, funcInfo, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-   print( out, "#endif\n" );
 
    print( out, "#endif /* TA_FUNC_NO_RANGE_CHECK */\n" );
    print( out, "\n" );
@@ -3880,6 +3709,8 @@ static void appendToFunc( FILE *out )
    fprintf( out, "TA_RetCode TA_RestoreCandleDefaultSettings( TA_CandleSettingType settingType );\n" );
 }
 
+// Removed: Java code generation - not needed for C-only compilation
+#if 0
 void genJavaCodePhase1( const TA_FuncInfo *funcInfo )
 {
    if (!gOutJavaDefs_H)
@@ -3888,7 +3719,10 @@ void genJavaCodePhase1( const TA_FuncInfo *funcInfo )
    fprintf( gOutJavaDefs_H->file, "#define TA_%s_Lookback %c%sLookback\n", funcInfo->name, tolower(funcInfo->camelCaseName[0]), &funcInfo->camelCaseName[1] );
    fprintf( gOutJavaDefs_H->file, "#define TA_%s %c%s\n", funcInfo->name, tolower(funcInfo->camelCaseName[0]), &funcInfo->camelCaseName[1] );
 }
+#endif
 
+// Removed: Java code generation - not needed for C-only compilation
+#if 0
 void genJavaCodePhase2( const TA_FuncInfo *funcInfo )
 {
    FILE *logicTmp;
@@ -3963,6 +3797,7 @@ void genJavaCodePhase2( const TA_FuncInfo *funcInfo )
    fileDelete( ta_fs_path(3, "..", "temp", "CoreJavaCode1.tmp") );
    fileDelete( ta_fs_path(3, "..", "temp", "CoreJavaCode2.tmp") );
 }
+#endif
 
 
 static int generateFuncAPI_C()

@@ -102,9 +102,7 @@ The `gen_code` tool (`src/tools/gen_code/gen_code.c`) reads the abstract layer d
 
 - Function prototypes in `include/ta_func.h`
 - Implementation boilerplate in indicator source files
-- SWIG interface files for language bindings
-- Java bindings
-- Rust bindings
+- Language bindings
 - XML function descriptions (`ta_func_api.xml`)
 - Documentation and test code
 
@@ -213,7 +211,6 @@ Output parameters can be marked with flags indicating their display characterist
 
 - `include/ta_func.h`: Auto-generated function prototypes
 - `ta_func_api.xml`: XML representation of all functions
-- `swig/src/interface/ta_func.swg`: SWIG interface definitions
 
 ## Example: Simple Moving Average (SMA)
 
